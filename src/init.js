@@ -9,7 +9,11 @@ import setupMagnify from './magnify.js';
 import setupModals from './modal.js';
 import setupHubDiagrams from './hubdiagram.js';
 import setupActorGraphs from './actorgraph.js';
+import setupDownloads from './downloads.js';
+import setupBizagi from './bizagi.js';
 import './route.css';
+import './dcam.css';
+import './recomendaciones.css';
 
 import 'reveal.js/reveal.css';
 import 'reveal.js/theme/black.css';
@@ -28,11 +32,13 @@ const deck = new Reveal({
 
 deck.initialize().then(() => {
   setupNavigation(deck);
+  setupDownloads();
   setupLaserAndClicks(deck);
   setupMagnify(deck);
   setupModals();
   setupHubDiagrams(deck);
   setupActorGraphs(deck);
+  setupBizagi();
 });
 
 export default deck;

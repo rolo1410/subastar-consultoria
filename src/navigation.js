@@ -114,8 +114,8 @@ export default function setupNavigation(deck) {
     slider.max = String(Math.max(0, total - 1));
     slider.value = String(current);
     counter.textContent = `${current + 1} / ${total}`;
-    // El botón "Menú principal" solo aparece en la última diapositiva
-    homeBtn.classList.toggle('is-visible', current === total - 1);
+    // El botón "Menú principal" aparece en la portada y en la última diapositiva
+    homeBtn.classList.toggle('is-visible', current === 0 || current === total - 1);
   }
 
   // Navegar al mover el slider

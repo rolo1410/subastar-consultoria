@@ -5,52 +5,501 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Recomendaciones — GIZ</title>
 </head>
-<body data-deck-title="Recomendaciones">
+<body data-deck-title="Trazabilidad Ganadera">
   <div class="reveal">
     <div class="slides">
-      <section>
-        <span class="slide-tag">Recomendaciones</span>
-        <h1>Recomendaciones</h1>
-        <p>Conclusiones y próximos pasos</p>
-        <div class="cover-logos">
-          <span class="logo"><img src="../assets/images/giz.png" alt="GIZ" /></span>
-          <span class="logo"><img src="../assets/images/sifae.png" alt="SIFAE" /></span>
-          <span class="logo"><img src="../assets/images/subastar.png" alt="Subastar" /></span>
+
+      <!-- 1 · Portada -->
+      <section class="cover has-watermark">
+        <img class="slide-watermark" src="../assets/images/ganado.png" alt="" aria-hidden="true" />
+        <div class="cover-inner">
+          <span class="slide-tag">Recomendaciones</span>
+          <h1><i class="fa-solid fa-cow"></i> Trazabilidad ganadera con valor agregado</h1>
+          <p class="cover-subtitle">Análisis de opciones para un sistema de trazabilidad · Subastar Ecuador S.A.S. · Cantón Chone</p>
+          <div class="cover-sponsors">
+            <span class="cover-sponsors__label">Con el apoyo de</span>
+            <div class="cover-logos">
+              <span class="logo"><img src="../assets/images/giz.png" alt="GIZ" /></span>
+              <span class="logo"><img src="../assets/images/sifae.png" alt="SIFAE" /></span>
+              <span class="logo"><img src="../assets/images/subastar.png" alt="Subastar" /></span>
+              <span class="logo"><img src="../assets/images/chone.png" alt="GAD Chone" /></span>
+              <span class="logo"><img src="../assets/images/ecudaor.png" alt="Ecuador" /></span>
+            </div>
+          </div>
+          <div class="cover-meta">
+            <p class="cover-credit">Elaborado por Casigña Rolando · Bryan Sánchez</p>
+            <p class="cover-place">Quito, Ecuador · Julio de 2026</p>
+            <a class="cover-madeby" href="https://kuyacode.com/" target="_blank" rel="noopener noreferrer">
+              <svg class="logo-icon" viewBox="0 0 40 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="18" y="34" width="4" height="12" rx="2" fill="currentColor"></rect><line x1="20" y1="34" x2="20" y2="24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></line><line x1="20" y1="24" x2="13" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line><line x1="20" y1="24" x2="27" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line><line x1="13" y1="16" x2="9" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></line><line x1="13" y1="16" x2="17" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></line><line x1="27" y1="16" x2="23" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></line><line x1="27" y1="16" x2="31" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></line><circle cx="9" cy="7" r="3.5" fill="currentColor"></circle><circle cx="17" cy="7" r="3.5" fill="currentColor"></circle><circle cx="23" cy="7" r="3.5" fill="currentColor"></circle><circle cx="31" cy="7" r="3.5" fill="currentColor"></circle><circle cx="13" cy="14" r="2.5" fill="currentColor" opacity="0.6"></circle><circle cx="27" cy="14" r="2.5" fill="currentColor" opacity="0.6"></circle></svg>
+              kuyacode.com
+            </a>
+          </div>
         </div>
       </section>
 
+      <!-- 2 · Agenda -->
       <section>
         <h2>Agenda</h2>
-        <ul>
-          <li>Hallazgos clave</li>
-          <li>Recomendaciones prioritarias</li>
-          <li>Hoja de ruta</li>
-          <li>Próximos pasos</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Hallazgos clave</h2>
-        <p>Resumen de los principales hallazgos.</p>
-        <aside class="notes">Notas para el presentador.</aside>
-      </section>
-
-      <section>
-        <h2>Recomendaciones prioritarias</h2>
         <ol>
-          <li>Recomendación 1</li>
-          <li>Recomendación 2</li>
-          <li>Recomendación 3</li>
+          <li>Contexto y oportunidad</li>
+          <li>Objetivos y modelo de certificación</li>
+          <li>Fuentes de información y oportunidades</li>
+          <li>Tres opciones de implementación</li>
+          <li>Arquitectura del sistema</li>
         </ol>
+        <aside class="notes">
+          Presentar el recorrido: partimos del contexto y la oportunidad, definimos
+          objetivos y el modelo de certificación, revisamos las fuentes de datos,
+          comparamos tres opciones de implementación y cerramos con el roadmap y la
+          arquitectura propuesta. Son cinco bloques; la idea es llegar a una
+          recomendación accionable.
+        </aside>
       </section>
 
+      <!-- 3 · Contexto y oportunidad -->
       <section>
-        <h2>Gracias</h2>
-        <p>Preguntas y comentarios</p>
+        <h2>Contexto y oportunidad</h2>
+        <p style="font-size:0.55em;">
+          Subastar Ecuador opera en Chone con una oportunidad clara.
+        </p>
+        <ul class="status-list">
+          <li><i class="fa-solid fa-circle-check ok"></i> Alta actividad ganadera en la región</li>
+          <li><i class="fa-solid fa-circle-check ok"></i> Sistema operativo robusto (Menú SIS)</li>
+          <li><i class="fa-solid fa-circle-xmark no"></i> Falta de trazabilidad integral</li>
+          <li><i class="fa-solid fa-circle-xmark no"></i> Sin certificados de valor agregado</li>
+          <li><i class="fa-solid fa-circle-xmark no"></i> Procesos manuales en verificación de datos</li>
+        </ul>
+        <p class="callout">
+          «Implementar un sistema de trazabilidad que no solo cumpla requisitos
+          normativos, sino que genere <strong>valor tangible</strong> para los
+          productores ganaderos.»
+        </p>
+        <aside class="notes">
+          Subastar tiene una base sólida: fuerte actividad ganadera en Chone y un
+          sistema operativo robusto (Menú SIS). Pero hay tres vacíos: no hay
+          trazabilidad integral, no se emiten certificados de valor agregado y la
+          verificación de datos sigue siendo manual. El desafío no es solo cumplir
+          la norma, sino generar valor real para el ganadero. Ese es el hilo
+          conductor de toda la presentación.
+        </aside>
       </section>
+
+      <!-- 4 · ¿Por qué valor agregado? -->
+      <section>
+        <h2>¿Por qué trazabilidad con valor agregado?</h2>
+        <div class="cards-grid">
+          <div class="info-card" style="cursor:default;">
+            <span class="info-card__icon"><i class="fa-solid fa-award"></i></span>
+            <h3>Diferenciación</h3>
+            <p>Acceso a mercados premium.</p>
+          </div>
+          <div class="info-card" style="cursor:default;">
+            <span class="info-card__icon"><i class="fa-solid fa-clipboard-check"></i></span>
+            <h3>Cumplimiento</h3>
+            <p>Preparación para EUDR y requisitos internacionales.</p>
+          </div>
+          <div class="info-card" style="cursor:default;">
+            <span class="info-card__icon"><i class="fa-solid fa-eye"></i></span>
+            <h3>Transparencia</h3>
+            <p>Confianza en la cadena de valor.</p>
+          </div>
+          <div class="info-card" style="cursor:default;">
+            <span class="info-card__icon"><i class="fa-solid fa-id-card"></i></span>
+            <h3>Visibilidad</h3>
+            <p>Perfil digital del productor.</p>
+          </div>
+        </div>
+        <aside class="notes">
+          El valor agregado se sostiene en cuatro pilares. Diferenciación: certificar
+          abre mercados premium. Cumplimiento: nos prepara para exigencias como la
+          EUDR de la Unión Europea. Transparencia: da confianza a toda la cadena.
+          Visibilidad: el ganadero obtiene un perfil digital que lo posiciona. La
+          idea clave: la trazabilidad deja de ser un costo regulatorio y se convierte
+          en una ventaja comercial.
+        </aside>
+      </section>
+
+      <!-- 5 · Objetivos estratégicos + Modelo de certificación -->
+      <section>
+        <h2>Objetivos y modelo de certificación</h2>
+        <p style="font-size:0.46em; margin-bottom:4px;">
+          Un sistema de trazabilidad que <strong>centralice</strong> fuentes,
+          <strong>integre</strong> georreferenciación, monitoreo ambiental y
+          prácticas sostenibles, <strong>genere</strong> certificados de valor
+          agregado y <strong>sea</strong> escalable, sostenible y mantenible.
+        </p>
+        <p style="font-size:0.42em; color:var(--color-accent); font-weight:600; margin:10px 0 0;">
+          Modelo de certificación · 7 dimensiones
+          <span style="color:var(--color-text-muted); font-weight:400;"><em>— haz clic en cada una para ver fuente y valor.</em></span>
+        </p>
+        <div class="cards-grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:10px 0 0;">
+          <button class="info-card" data-modal="cert-origen" style="padding:12px 14px;">
+            <span class="info-card__icon"><i class="fa-solid fa-location-dot"></i></span>
+            <h3>1 · Origen</h3>
+            <p>Origen geográfico (Chone).</p>
+          </button>
+          <button class="info-card" data-modal="cert-traza" style="padding:12px 14px;">
+            <span class="info-card__icon"><i class="fa-solid fa-timeline"></i></span>
+            <h3>2 · Trazabilidad</h3>
+            <p>Historial completo del animal.</p>
+          </button>
+          <button class="info-card" data-modal="cert-edad" style="padding:12px 14px;">
+            <span class="info-card__icon"><i class="fa-solid fa-hourglass-half"></i></span>
+            <h3>3 · Edad</h3>
+            <p>Certificación de edad (premium).</p>
+          </button>
+          <button class="info-card" data-modal="cert-calidad" style="padding:12px 14px;">
+            <span class="info-card__icon"><i class="fa-solid fa-weight-scale"></i></span>
+            <h3>4 · Calidad</h3>
+            <p>Estándares de peso y categoría.</p>
+          </button>
+          <button class="info-card" data-modal="cert-sost" style="padding:12px 14px;">
+            <span class="info-card__icon"><i class="fa-solid fa-tree"></i></span>
+            <h3>5 · Sostenibilidad</h3>
+            <p>Producción sin deforestación.</p>
+          </button>
+          <button class="info-card" data-modal="cert-sanidad" style="padding:12px 14px;">
+            <span class="info-card__icon"><i class="fa-solid fa-syringe"></i></span>
+            <h3>6 · Sanidad</h3>
+            <p>Estado sanitario completo.</p>
+          </button>
+          <button class="info-card" data-modal="cert-manejo" style="padding:12px 14px;">
+            <span class="info-card__icon"><i class="fa-solid fa-hand-holding-heart"></i></span>
+            <h3>7 · Manejo</h3>
+            <p>Buenas prácticas ganaderas.</p>
+          </button>
+        </div>
+
+        <template id="cert-origen">
+          <h3>1 · Origen</h3>
+          <p><strong>Fuente:</strong> georreferenciación de fincas. <strong>Certificado:</strong> origen geográfico (Chone). <strong>Valor:</strong> diferenciación regional.</p>
+        </template>
+        <template id="cert-traza">
+          <h3>2 · Trazabilidad</h3>
+          <p><strong>Fuente:</strong> SIFAE + registros del productor. <strong>Certificado:</strong> historial completo del animal. <strong>Valor:</strong> transparencia de la cadena.</p>
+        </template>
+        <template id="cert-edad">
+          <h3>3 · Edad</h3>
+          <p><strong>Fuente:</strong> registro de nacimiento + SIFAE. <strong>Certificado:</strong> certificación de edad (calidad premium). <strong>Valor:</strong> animal joven = mejor precio.</p>
+        </template>
+        <template id="cert-calidad">
+          <h3>4 · Calidad</h3>
+          <p><strong>Fuente:</strong> peso y categoría (Subastar). <strong>Certificado:</strong> estándares de peso/categoría. <strong>Valor:</strong> calidad garantizada.</p>
+        </template>
+        <template id="cert-sost">
+          <h3>5 · Sostenibilidad</h3>
+          <p><strong>Fuente:</strong> Global Forest Watch + prácticas del ganadero. <strong>Certificado:</strong> producción sin deforestación. <strong>Valor:</strong> acceso a mercados eco-conscientes.</p>
+        </template>
+        <template id="cert-sanidad">
+          <h3>6 · Sanidad</h3>
+          <p><strong>Fuente:</strong> SIFAE (vacunaciones). <strong>Certificado:</strong> estado sanitario completo. <strong>Valor:</strong> cumplimiento normativo.</p>
+        </template>
+        <template id="cert-manejo">
+          <h3>7 · Manejo</h3>
+          <p><strong>Fuente:</strong> registros de prácticas del productor. <strong>Certificado:</strong> buenas prácticas ganaderas. <strong>Valor:</strong> cumplimiento de estándares.</p>
+        </template>
+        <aside class="notes">
+          El objetivo es un sistema que centralice fuentes, integre georreferenciación
+          y sostenibilidad, genere certificados y sea escalable y mantenible. Todo eso
+          se materializa en el modelo de certificación de 7 dimensiones: origen,
+          trazabilidad, edad, calidad, sostenibilidad, sanidad y manejo. Cada
+          dimensión tiene una fuente de datos concreta y un valor comercial asociado.
+          Se puede abrir cada tarjeta en vivo para mostrar de dónde sale el dato y qué
+          valor aporta; destacar que edad y sostenibilidad son las que más impactan el
+          precio.
+        </aside>
+      </section>
+
+      <!-- 6 · Fuentes de información + oportunidades de integración (fusión 6·7·8) -->
+      <section>
+        <h2>Fuentes de información y oportunidades</h2>
+        <div style="display:grid; grid-template-columns:1.25fr 1fr; gap:22px; align-items:start; margin-top:10px;">
+          <div>
+            <table class="rtable" style="margin-top:0;">
+              <thead>
+                <tr><th>Fuente</th><th>Datos</th><th>Estado / potencial</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>SIFAE</strong> · AGROCALIDAD</td><td>Animales, guías, vacunas</td><td><span class="tag-mid">Manual</span></td></tr>
+                <tr><td><strong>SRI</strong></td><td>Contribuyentes, facturación</td><td><span class="tag-mid">Parcial</span></td></tr>
+                <tr><td><strong>Subastar</strong> · Menú SIS</td><td>Operativos, precios, liquidaciones</td><td><span class="tag-hi">Central</span></td></tr>
+                <tr><td><strong>Registro Civil</strong></td><td>Identificación de personas</td><td><span class="tag-lo">No integrado</span></td></tr>
+                <tr><td>🌍 <strong>Global Forest Watch</strong></td><td>Deforestación, alertas</td><td><span class="tag-hi">★★★ · API</span></td></tr>
+                <tr><td>🏛️ <strong>GAD Chone</strong></td><td>Catastro, zonificación</td><td><span class="tag-mid">★★</span></td></tr>
+                <tr><td>📊 <strong>INEC</strong></td><td>Datos censales</td><td><span class="tag-mid">★★</span></td></tr>
+                <tr><td>🌾 <strong>MAG / FAO</strong></td><td>Buenas prácticas</td><td><span class="tag-hi">★★★</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <p style="font-size:0.42em; color:var(--color-accent); font-weight:600; margin:0 0 8px;">
+              Oportunidades de integración
+              <span style="color:var(--color-text-muted); font-weight:400;"><em>— clic para detalle.</em></span>
+            </p>
+            <div style="display:grid; gap:10px;">
+              <button class="info-card" data-modal="oi-geo" style="flex-direction:row; align-items:center; gap:12px; padding:10px 14px;">
+                <span class="info-card__icon" style="font-size:1.2em;"><i class="fa-solid fa-map-location-dot"></i></span>
+                <span><h3 style="margin:0;">Georreferenciación de fincas</h3><p style="margin:2px 0 0;">Catastro + GPS, validado con satélite.</p></span>
+              </button>
+              <button class="info-card" data-modal="oi-etario" style="flex-direction:row; align-items:center; gap:12px; padding:10px 14px;">
+                <span class="info-card__icon" style="font-size:1.2em;"><i class="fa-solid fa-chart-line"></i></span>
+                <span><h3 style="margin:0;">Seguimiento etario y productivo</h3><p style="margin:2px 0 0;">SIFAE + registros, vinculado a peso.</p></span>
+              </button>
+              <button class="info-card" data-modal="oi-sost" style="flex-direction:row; align-items:center; gap:12px; padding:10px 14px;">
+                <span class="info-card__icon" style="font-size:1.2em;"><i class="fa-solid fa-leaf"></i></span>
+                <span><h3 style="margin:0;">Certificación de sostenibilidad</h3><p style="margin:2px 0 0;">Cruce de deforestación con ubicación.</p></span>
+              </button>
+              <button class="info-card" data-modal="oi-valor" style="flex-direction:row; align-items:center; gap:12px; padding:10px 14px;">
+                <span class="info-card__icon" style="font-size:1.2em;"><i class="fa-solid fa-medal"></i></span>
+                <span><h3 style="margin:0;">Valor agregado al productor</h3><p style="margin:2px 0 0;">Certificados digitales y perfil.</p></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <template id="oi-geo">
+          <h3>Georreferenciación de fincas</h3>
+          <p>
+            Integrar el <strong>catastro del GAD Chone</strong> con
+            <strong>coordenadas GPS</strong> de cada finca y validar la ubicación
+            con <strong>imágenes satelitales</strong> (Global Forest Watch).
+          </p>
+        </template>
+        <template id="oi-etario">
+          <h3>Seguimiento etario y productivo</h3>
+          <p>
+            Complementar la edad estimada de <strong>SIFAE</strong> con los
+            registros del productor y <strong>vincularla al peso y categoría</strong>
+            capturados en Subastar.
+          </p>
+        </template>
+        <template id="oi-sost">
+          <h3>Certificación de sostenibilidad</h3>
+          <p>
+            Cruzar datos de <strong>deforestación</strong> con la ubicación de las
+            fincas y verificar las prácticas contra <strong>estándares
+            internacionales</strong>.
+          </p>
+        </template>
+        <template id="oi-valor">
+          <h3>Valor agregado al productor</h3>
+          <p>
+            Emitir <strong>certificados digitales</strong> de origen, edad, peso,
+            sanidad y sostenibilidad, y construir un <strong>perfil consolidado
+            del ganadero</strong>.
+          </p>
+        </template>
+        <aside class="notes">
+          A la izquierda, el inventario de fuentes: las oficiales (SIFAE, SRI,
+          Subastar, Registro Civil) y las complementarias que habilitan el valor
+          agregado (Global Forest Watch, GAD Chone, INEC, MAG/FAO). Subastar es el
+          sistema central; Global Forest Watch destaca porque ya ofrece API. A la
+          derecha, las cuatro oportunidades de integración: georreferenciar fincas,
+          seguimiento etario, certificación de sostenibilidad y el valor agregado al
+          productor. Se puede abrir cada tarjeta para el detalle. Mensaje: gran parte
+          del dato ya existe; el reto es conectarlo.
+        </aside>
+      </section>
+
+      <!-- 7 · Tres opciones — intro -->
+      <section>
+        <span class="slide-tag">Sección 4</span>
+        <h1><i class="fa-solid fa-code-branch"></i> Tres opciones de implementación</h1>
+        <p style="font-size:0.55em; color:var(--color-text-muted);">
+          Repositorio independiente · Módulo en Subastar · Solución del GAD Chone
+        </p>
+        <aside class="notes">
+          Diapositiva de transición. Anunciar que evaluamos tres caminos para
+          implementar el sistema, cada uno con distinto dueño, costo y alcance: un
+          repositorio independiente, un módulo dentro de Subastar, o una solución
+          gestionada por el GAD Chone. En las siguientes tres diapositivas revisamos
+          ventajas y desventajas de cada una.
+        </aside>
+      </section>
+
+      <!-- 8 · Opción 1 -->
+      <section>
+        <h2>Opción 1 · Repositorio centralizado independiente</h2>
+        <p style="font-size:0.5em; max-width:44em;">
+          Sistema <strong>independiente</strong> que comunica con todas las fuentes
+          (SIFAE, SRI, Subastar, Global Forest Watch, GAD Chone), consolida la
+          información y funciona como <strong>única fuente de verdad</strong>.
+        </p>
+        <div class="pros-cons">
+          <div class="pc pc--pro">
+            <h4><i class="fa-solid fa-circle-check"></i> Ventajas</h4>
+            <ul>
+              <li>Escalabilidad nacional</li>
+              <li>Flexibilidad para agregar nuevas fuentes</li>
+              <li>Estandarización de datos e independencia tecnológica</li>
+              <li>Certificados consolidados</li>
+            </ul>
+          </div>
+          <div class="pc pc--con">
+            <h4><i class="fa-solid fa-circle-xmark"></i> Desventajas</h4>
+            <ul>
+              <li>Inversión inicial significativa</li>
+              <li>Requiere mantenimiento dedicado</li>
+              <li>Gobernanza de datos compleja</li>
+              <li>Coordinación interinstitucional difícil</li>
+            </ul>
+          </div>
+        </div>
+        <p class="opt-meta">
+          <strong>Propietario:</strong> GAD Manabí o alianza público-privada
+          (Subastar + GAD + AGROCALIDAD). &nbsp;·&nbsp;
+          <strong>Mantenimiento:</strong> entidad especializada.
+        </p>
+        <aside class="notes">
+          Opción 1: un sistema independiente que se convierte en la única fuente de
+          verdad y conversa con todas las fuentes. Es la más potente para escalar a
+          nivel nacional y estandarizar datos, con total independencia tecnológica.
+          El costo: inversión inicial alta, mantenimiento dedicado y una gobernanza de
+          datos compleja que exige coordinación interinstitucional. Ideal como visión
+          de largo plazo, propiedad de una alianza público-privada.
+        </aside>
+      </section>
+
+      <!-- 9 · Opción 2 -->
+      <section>
+        <h2>Opción 2 · Módulo dentro de Subastar</h2>
+        <p style="font-size:0.5em; max-width:44em;">
+          Desarrollar un <strong>módulo de trazabilidad</strong> integrado en el
+          Menú SIS existente, con nuevas integraciones (Global Forest Watch,
+          GAD Chone) sobre la infraestructura actual.
+        </p>
+        <div class="pros-cons">
+          <div class="pc pc--pro">
+            <h4><i class="fa-solid fa-circle-check"></i> Ventajas</h4>
+            <ul>
+              <li>Aprovecha infraestructura existente</li>
+              <li>Costo incremental menor</li>
+              <li>Integración operativa directa</li>
+              <li>Mantenimiento por Subastar Colombia</li>
+            </ul>
+          </div>
+          <div class="pc pc--con">
+            <h4><i class="fa-solid fa-circle-xmark"></i> Desventajas</h4>
+            <ul>
+              <li>Dependencia de la casa matriz (Colombia)</li>
+              <li>Limitación geográfica (solo operaciones Subastar)</li>
+              <li>Difícil de replicar en otras provincias</li>
+              <li>Riesgo tecnológico si cambia el sistema</li>
+            </ul>
+          </div>
+        </div>
+        <p class="opt-meta warn">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <strong>Riesgo:</strong> Subastar Ecuador no controla el Menú SIS
+          (propiedad intelectual en Colombia) → dependencia externa para su evolución.
+        </p>
+        <aside class="notes">
+          Opción 2: aprovechar lo que ya existe y construir el módulo de trazabilidad
+          dentro del Menú SIS. Es la más rápida y barata de arrancar (6–9 meses) y con
+          integración operativa directa. El gran pero, y hay que decirlo con claridad:
+          Subastar Ecuador no es dueña del Menú SIS; la propiedad intelectual está en
+          Colombia. Eso genera dependencia externa para cualquier evolución y limita la
+          réplica en otras provincias.
+        </aside>
+      </section>
+
+      <!-- 10 · Opción 3 -->
+      <section>
+        <h2>Opción 3 · Solución gestionada por GAD Chone</h2>
+        <p style="font-size:0.5em; max-width:44em;">
+          El <strong>GAD del cantón Chone</strong> desarrolla, implementa y mantiene
+          el registro y georreferenciación de fincas, la recolección de datos y los
+          certificados de valor agregado locales.
+        </p>
+        <div class="pros-cons">
+          <div class="pc pc--pro">
+            <h4><i class="fa-solid fa-circle-check"></i> Ventajas</h4>
+            <ul>
+              <li>Control local total</li>
+              <li>Enfoque territorial específico</li>
+              <li>Valor agregado directo para Chone</li>
+              <li>Piloto replicable en otras provincias</li>
+            </ul>
+          </div>
+          <div class="pc pc--con">
+            <h4><i class="fa-solid fa-circle-xmark"></i> Desventajas</h4>
+            <ul>
+              <li>Capacidad técnica limitada del GAD</li>
+              <li>Presupuesto municipal insuficiente</li>
+              <li>Alcance limitado al cantón</li>
+              <li>Riesgo de sostenibilidad (cambios administrativos)</li>
+            </ul>
+          </div>
+        </div>
+        <p class="opt-meta">
+          <i class="fa-solid fa-lightbulb"></i>
+          <strong>Oportunidad:</strong> el GAD Chone mostró interés en soluciones
+          tecnológicas → modelo ideal como <strong>prueba piloto</strong>.
+        </p>
+        <aside class="notes">
+          Opción 3: que el GAD Chone lidere. Su fortaleza es el control local total y
+          el enfoque territorial: valor directo para Chone y un piloto replicable. Los
+          riesgos son la capacidad técnica y el presupuesto municipal, además de la
+          sostenibilidad frente a cambios administrativos. El dato relevante: el GAD ya
+          mostró interés en soluciones tecnológicas, lo que lo hace el candidato
+          natural para arrancar como prueba piloto. Esto conecta directo con la
+          recomendación.
+        </aside>
+      </section>
+
+      <!-- Arquitectura del sistema -->
+      <section>
+        <h2>Arquitectura del sistema</h2>
+        <div class="arch-hub">
+          <p class="arch-hub__title">Repositorio central de trazabilidad · Plataforma nacional de ganadería</p>
+          <div class="arch-modules">
+            <div class="arch-mod"><i class="fa-solid fa-cow"></i>Datos de animales</div>
+            <div class="arch-mod"><i class="fa-solid fa-user"></i>Datos del productor</div>
+            <div class="arch-mod"><i class="fa-solid fa-map-location-dot"></i>Georreferenciación</div>
+            <div class="arch-mod"><i class="fa-solid fa-weight-scale"></i>Calidad</div>
+            <div class="arch-mod"><i class="fa-solid fa-leaf"></i>Sostenibilidad</div>
+            <div class="arch-mod"><i class="fa-solid fa-certificate"></i>Certificación</div>
+          </div>
+        </div>
+        <div class="arch-conn"><i class="fa-solid fa-arrows-up-down"></i></div>
+        <div class="arch-sources">
+          <span class="arch-src">SIFAE <small>AGROCALIDAD</small></span>
+          <span class="arch-src">SRI <small>Facturación</small></span>
+          <span class="arch-src">Subastar <small>Menú SIS</small></span>
+          <span class="arch-src">Global Forest Watch <small>Ambiental</small></span>
+          <span class="arch-src">GAD Chone <small>Catastro</small></span>
+        </div>
+        <aside class="notes">
+          Cómo se ve técnicamente: un repositorio central con seis módulos —animales,
+          productor, georreferenciación, calidad, sostenibilidad y certificación— que
+          se alimenta de las fuentes externas de abajo: SIFAE, SRI, Subastar, Global
+          Forest Watch y GAD Chone. La arquitectura es modular a propósito: se puede
+          empezar con pocos módulos y fuentes en el piloto e ir sumando el resto sin
+          rehacer el sistema. Con esto cerramos la parte técnica antes de las
+          preguntas.
+        </aside>
+      </section>
+
+      <!-- 13 · Preguntas -->
+      <section class="has-watermark">
+        <img class="slide-watermark" src="../assets/images/ganado.png" alt="" aria-hidden="true" />
+        <span class="slide-tag">Cierre Recomendaciones</span>
+        <h1><i class="fa-solid fa-circle-question"></i> Preguntas</h1>
+        <p>¿Preguntas o comentarios?</p>
+        <p style="font-size:0.42em; color:var(--color-text-muted); margin-top:24px;">
+          Subastar Ecuador S.A.S. · gobernanza@subastar.ec · Cantón Chone, Manabí
+        </p>
+      </section>
+
     </div>
   </div>
   <div class="footer">GIZ · Recomendaciones</div>
+
+  <!-- Fuentes descargables (se muestran como iconos en el header) -->
+  <template id="deck-sources">
+    <a href="fuentes/Analisis_Opciones_Trazabilidad_Ganadera.docx" data-type="word" data-label="Análisis de opciones de trazabilidad ganadera"></a>
+  </template>
+
   <script type="module" src="/src/init.js"></script>
 </body>
 </html>

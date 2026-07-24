@@ -9,14 +9,30 @@
   <div class="reveal">
     <div class="slides">
       <!-- Portada -->
-      <section>
-        <span class="slide-tag">Procesos</span>
-        <h1>Procesos</h1>
-        <p>Mapeo de procesos</p>
-        <div class="cover-logos">
-          <span class="logo"><img src="../assets/images/giz.png" alt="GIZ" /></span>
-          <span class="logo"><img src="../assets/images/sifae.png" alt="SIFAE" /></span>
-          <span class="logo"><img src="../assets/images/subastar.png" alt="Subastar" /></span>
+      <section class="cover has-watermark">
+        <img class="slide-watermark" src="../assets/images/ganado.png" alt="" aria-hidden="true" />
+        <div class="cover-inner">
+          <span class="slide-tag">Procesos</span>
+          <h1>Procesos</h1>
+          <p class="cover-subtitle">Mapeo de procesos</p>
+          <div class="cover-sponsors">
+            <span class="cover-sponsors__label">Con el apoyo de</span>
+            <div class="cover-logos">
+              <span class="logo"><img src="../assets/images/giz.png" alt="GIZ" /></span>
+              <span class="logo"><img src="../assets/images/sifae.png" alt="SIFAE" /></span>
+              <span class="logo"><img src="../assets/images/subastar.png" alt="Subastar" /></span>
+              <span class="logo"><img src="../assets/images/chone.png" alt="GAD Chone" /></span>
+              <span class="logo"><img src="../assets/images/ecudaor.png" alt="Ecuador" /></span>
+            </div>
+          </div>
+          <div class="cover-meta">
+            <p class="cover-credit">Elaborado por Casigña Rolando · Bryan Sánchez</p>
+            <p class="cover-place">Quito, Ecuador · Julio de 2026</p>
+            <a class="cover-madeby" href="https://kuyacode.com/" target="_blank" rel="noopener noreferrer">
+              <svg class="logo-icon" viewBox="0 0 40 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="18" y="34" width="4" height="12" rx="2" fill="currentColor"></rect><line x1="20" y1="34" x2="20" y2="24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></line><line x1="20" y1="24" x2="13" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line><line x1="20" y1="24" x2="27" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line><line x1="13" y1="16" x2="9" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></line><line x1="13" y1="16" x2="17" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></line><line x1="27" y1="16" x2="23" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></line><line x1="27" y1="16" x2="31" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></line><circle cx="9" cy="7" r="3.5" fill="currentColor"></circle><circle cx="17" cy="7" r="3.5" fill="currentColor"></circle><circle cx="23" cy="7" r="3.5" fill="currentColor"></circle><circle cx="31" cy="7" r="3.5" fill="currentColor"></circle><circle cx="13" cy="14" r="2.5" fill="currentColor" opacity="0.6"></circle><circle cx="27" cy="14" r="2.5" fill="currentColor" opacity="0.6"></circle></svg>
+              kuyacode.com
+            </a>
+          </div>
         </div>
       </section>
 
@@ -35,6 +51,14 @@
           <li>Conclusiones · Hallazgos clave</li>
           <li>Preguntas</li>
         </ol>
+        <aside class="notes">
+          Este deck recorre cómo levantamos el proceso de la subasta: arrancamos con
+          el enfoque y la metodología, delimitamos el alcance y los actores, luego el
+          proceso macro paso a paso, la información que entrega el proveedor, el modelo
+          en Bizagi, las entradas y salidas, y cerramos con los hallazgos clave.
+          Anticipar que la mirada es 360°: operación, tecnología, finanzas y gobernanza
+          de datos.
+        </aside>
       </section>
 
       <!-- Introducción -->
@@ -186,6 +210,15 @@
             </li>
           </ul>
         </template>
+        <aside class="notes">
+          Usamos tres instrumentos complementarios. Entrevistas semiestructuradas a
+          los actores clave de todo el ciclo —de gerencia a ganaderos— para mapear el
+          flujo físico y de información. Cuestionarios técnicos con TI y base de datos
+          para infraestructura, integraciones y seguridad. Y la metodología DCAM para
+          medir la madurez de la gobernanza de datos en escala 1 a 6. Lo valioso fue
+          cruzar lo que dicen las políticas corporativas de Colombia con el uso real
+          del Menú SIS y el Display. Se puede abrir cada tarjeta para el detalle.
+        </aside>
       </section>
 
       <!-- Alcance -->
@@ -343,6 +376,15 @@
             </li>
           </ul>
         </template>
+        <aside class="notes">
+          El alcance es el ciclo de vida completo del negocio: desde captar al cliente
+          hasta el pago final y el despacho. Lo abordamos en cinco capas, cada una en
+          una tarjeta: operativo y comercial (el end-to-end físico), tecnológico y
+          arquitectura (módulos, base de datos, seguridad), financiero y administrativo
+          (pagos, comisiones, integración con CIESA/SRI), estratégico y gobierno de
+          datos (madurez DCAM y políticas) y la perspectiva 360° de actores. Idea a
+          transmitir: no miramos solo la subasta, sino todo el ecosistema que la rodea.
+        </aside>
       </section>
 
       <!-- Actores -->
@@ -798,6 +840,16 @@
             </li>
           </ul>
         </template>
+        <aside class="notes">
+          Este es el corazón del deck: el proceso macro en seis fases, que se despliegan
+          en pantalla como una ruta en «S». Cero/Uno: inscripción y premercadeo, y
+          recepción con verificación obligatoria de la guía SIFAE. Dos: loteo y pesaje
+          —punto de no retorno, porque al registrar el peso el dato se vuelve inmutable.
+          Tres: la puja en pista con el Display en vivo y la liquidación/facturación.
+          Cuatro: pagos por transferencia y despacho con nueva guía. Conviene abrir el
+          modal de cada fase, sobre todo el de pesaje, para mostrar qué datos se
+          capturan y dónde. Recalcar la inmutabilidad y el anonimato entre las partes.
+        </aside>
       </section>
 
       <!-- Proceso macro · Información que entrega el proveedor -->
@@ -886,13 +938,39 @@
             </li>
           </ul>
         </template>
+        <aside class="notes">
+          El proveedor entrega información en dos momentos. Al registrarse: datos
+          personales, cédula, RUC (obligatorio para facturar), referencias y contrato
+          firmado. Y cada vez que ingresa animales: la guía de movilización SIFAE
+          impresa —requisito estricto, sin ella no entra— más la directriz de cómo
+          armar los lotes. El punto clave a subrayar: aparte de la guía y las
+          características del lote, Subastar no exige datos de genética ni registros
+          sanitarios del animal. Ahí hay una oportunidad de mejora que retomamos en las
+          conclusiones y en Recomendaciones.
+        </aside>
       </section>
 
       <!-- Bizagi -->
-      <section>
+      <section class="bizagi-slide">
         <h2>Bizagi</h2>
-        <p>Diagrama del proceso modelado en Bizagi.</p>
-        <aside class="notes">Insertar aquí la imagen o el diagrama exportado de Bizagi.</aside>
+
+        <div class="bizagi" data-bizagi>
+          <div class="bizagi__viewport">
+            <img class="bizagi__img"
+                 src="fuentes/2026_07_02_Proceso_subasta_bovinos_v4.png"
+                 alt="Proceso de subasta de bovinos — diagrama Bizagi" />
+          </div>
+          <div class="bizagi__minimap" aria-hidden="true">
+            <img src="fuentes/2026_07_02_Proceso_subasta_bovinos_v4.png" alt="" />
+            <span class="bizagi__minimap-view"></span>
+          </div>
+        </div>
+
+        <aside class="notes">
+          Mantener Ctrl y mover el mouse sobre el diagrama para recorrerlo
+          ampliado; el minimapa (esquina inferior derecha) muestra la porción
+          visible. La rueda del mouse ajusta el nivel de acercamiento.
+        </aside>
       </section>
 
       <!-- Entradas y salidas -->
@@ -966,6 +1044,15 @@
             </ul>
           </div>
         </div>
+        <aside class="notes">
+          Resumen del proceso como caja de entradas y salidas. Entran: los animales,
+          los datos y documentación legal del ganadero, la guía SIFAE obligatoria y los
+          criterios de loteo y peso. Salen: los animales despachados al comprador, el
+          ticket de respaldo, las liquidaciones de compra y venta, la nueva guía de
+          movilización con Subastar como origen, el flujo financiero por transferencia
+          y los reportes e indicadores del Menú SIS. Sirve para ver de un vistazo qué
+          consume y qué produce el proceso; las columnas tienen scroll si hace falta.
+        </aside>
       </section>
 
       <!-- Conclusiones -->
@@ -1121,10 +1208,22 @@
             </li>
           </ul>
         </template>
+        <aside class="notes">
+          Cierre con cinco grupos de hallazgos. Uno: brechas culturales y tributarias
+          —miedo al SRI y desinformación de intermediarios informales. Dos: logística
+          y competitividad —altos fletes y fuga de volumen hacia otras provincias.
+          Tres: percepción financiera —descuentos vistos como confusos y algún fallo en
+          la entrega física. Cuatro: tecnología y trazabilidad —sin API estatal,
+          trazabilidad por lote y sin georreferenciación. Cinco: centralización y
+          gobernanza —datos inmutables y centralizados, pero gobernanza en nivel 1. Los
+          hallazgos 4 y 5 son el puente directo hacia las presentaciones de Gobierno y
+          Recomendaciones. Se puede abrir cada tarjeta para el detalle.
+        </aside>
       </section>
 
       <!-- Preguntas -->
-      <section>
+      <section class="has-watermark">
+        <img class="slide-watermark" src="../assets/images/ganado.png" alt="" aria-hidden="true" />
         <span class="slide-tag">Cierre Procesos</span>
         <h1><i class="fa-solid fa-circle-question"></i> Preguntas</h1>
         <p>¿Preguntas o comentarios?</p>
@@ -1132,6 +1231,20 @@
     </div>
   </div>
   <div class="footer">GIZ · Procesos</div>
+
+  <!-- Fuentes descargables (se muestran como iconos en el header) -->
+  <template id="deck-sources">
+    <a href="fuentes/2026_07_03_Informe_Proceso_Subasta_Bovinos_v4.docx" data-type="word" data-label="Informe del proceso de subasta"></a>
+    <a href="fuentes/2026_07_03_comercializacion_bovinos_subastar.pptx" data-type="ppt" data-label="Comercialización de bovinos (presentación)"></a>
+    <a href="fuentes/2026_07_02_Proceso_subasta_bovinos_v4.bpm" data-type="bpm" data-label="Modelo de proceso (BPMN · Bizagi)"></a>
+    <a href="fuentes/2026_07_02_Proceso_subasta_bovinos_v4.png" data-type="img" data-label="Diagrama de proceso · Completo"></a>
+    <a href="fuentes/2026_07_02_Proceso_subasta_bovinos_v4_subasta.png" data-type="img" data-label="Diagrama · Subasta"></a>
+    <a href="fuentes/2026_07_02_Proceso_subasta_bovinos_v4_generaci%C3%B3n_de_guia.png" data-type="img" data-label="Diagrama · Generación de guía"></a>
+    <a href="fuentes/2026_06_11_PR_GE_GANADEROS.docx" data-type="word" data-label="Guía de entrevista · Ganaderos"></a>
+    <a href="fuentes/2026_06_11_PR_GE_PRESIDENTE_GANADEROS.docx" data-type="word" data-label="Guía de entrevista · Presidente de ganaderos"></a>
+    <a href="fuentes/2026_06_11_PR_GE_OPERATIVO.docx" data-type="word" data-label="Guía de entrevista · Operativo"></a>
+  </template>
+
   <script type="module" src="/src/init.js"></script>
 </body>
 </html>

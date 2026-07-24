@@ -1,0 +1,122 @@
+/* ==========================================================================
+   Visor del diagrama Bizagi — zoom por Ctrl + minimapa
+   ========================================================================== */
+
+/* Slide dedicado: el diagrama ocupa todo el contenido disponible y se centra.
+   Se conserva el mecanismo de zoom (imagen llenando el viewport con la relación
+   real fijada por bizagi.js); solo maximizamos el tamaño y quitamos márgenes. */
+.reveal section.bizagi-slide {
+  padding: 58px 8px 8px; /* deja libre el header superior */
+  height: 100%;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.reveal .bizagi {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Que el visor no supere la altura disponible (imágenes poco anchas). */
+.reveal section.bizagi-slide .bizagi__viewport {
+  max-height: 100%;
+}
+
+.reveal .bizagi__viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* se sobrescribe con la relación real de la imagen */
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.15));
+  background: #ffffff;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.35);
+  cursor: default;
+}
+
+.reveal .bizagi__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0 0;
+  transform: translate(0px, 0px) scale(1);
+  will-change: transform;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: transform 0.18s ease;
+}
+
+/* Modo zoom activo (Ctrl presionado + cursor sobre el diagrama) */
+.reveal .bizagi.is-zooming .bizagi__viewport {
+  cursor: none;
+}
+.reveal .bizagi.is-zooming .bizagi__img {
+  transition: none;
+}
+
+/* --- Minimapa ------------------------------------------------------------ */
+.reveal .bizagi__minimap {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 200px;
+  max-width: 34%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  background: #ffffff;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.16s ease, transform 0.16s ease;
+  pointer-events: none;
+  z-index: 30;
+}
+
+.reveal .bizagi.is-zooming .bizagi__minimap {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal .bizagi__minimap img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.reveal .bizagi__minimap-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid var(--color-accent, #ffc300);
+  background: rgba(255, 195, 0, 0.16);
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.28);
+  pointer-events: none;
+}
+
+/* --- Botón de descarga (reutiliza .download; solo espaciado) ------------- */
+.reveal .bizagi__download {
+  display: inline-flex;
+  width: auto;
+  margin: 16px auto 0;
+}
+
+/* --- Tecla Ctrl en el texto de ayuda ------------------------------------ */
+.reveal kbd {
+  display: inline-block;
+  padding: 1px 7px;
+  font-family: inherit;
+  font-size: 0.9em;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--color-text, #fff);
+  background: var(--color-surface-2, rgba(255, 255, 255, 0.08));
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.25));
+  border-bottom-width: 2px;
+  border-radius: 5px;
+}

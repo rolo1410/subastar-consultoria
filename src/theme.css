@@ -13,6 +13,33 @@
   background: var(--color-bg);
 }
 
+/* --- Marca de agua (ganado.png) en portada y slide de cierre ------------ */
+.reveal section.has-watermark {
+  isolation: isolate; /* contiene el apilamiento de la marca de agua */
+  height: 100%; /* el slide ocupa todo el alto para una marca de agua de fondo completo */
+  min-height: 100%;
+}
+
+.reveal .slide-watermark {
+  position: absolute;
+  inset: 0;
+  width: 100%;              /* ocupa todo el ancho del slide */
+  height: 100%;             /* ocupa todo el alto del slide */
+  object-fit: cover;        /* llena ancho y alto sin deformar (recorta lo que sobra) */
+  object-position: center;
+  opacity: 0.1;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* El contenido del slide se mantiene por encima de la marca de agua */
+.reveal section.has-watermark > *:not(.slide-watermark) {
+  position: relative;
+  z-index: 1;
+}
+
 /* El contenido arranca debajo del header, un poco más arriba que el centro */
 .reveal .slides > section,
 .reveal .slides > section > section {
@@ -64,6 +91,14 @@
 
 .reveal .progress {
   color: var(--color-accent);
+  height: 6px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* La barra de progreso solo aparece al pasar el mouse sobre ella. */
+.reveal .progress:hover {
+  opacity: 1;
 }
 
 .reveal .footer {
@@ -74,31 +109,212 @@
   color: var(--color-text-muted);
 }
 
-/* Logos en la portada de las presentaciones */
+/* Barra de auspiciantes en la portada de las presentaciones */
+.reveal .cover-sponsors {
+  margin-top: 46px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.reveal .cover-sponsors__label {
+  font-size: 0.34em;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
 .reveal .cover-logos {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 18px;
-  margin-top: 40px;
+  gap: 14px;
 }
 
 .reveal .cover-logos .logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
-  padding: 0 16px;
+  height: 58px;
+  padding: 0 18px;
   background: #ffffff;
   border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
 }
 
 .reveal .cover-logos .logo img {
-  height: 36px; /* más pequeños; todos del mismo tamaño (misma altura) */
+  height: 34px; /* todos con la misma altura para un look homogéneo */
   width: auto;
   object-fit: contain;
   display: block;
+}
+
+.reveal .cover-credit {
+  margin: 0;
+  font-size: 0.5em;
+  color: var(--color-text-muted);
+  letter-spacing: 0.03em;
+}
+
+/* --- Portada organizada -------------------------------------------------- */
+/* La portada ocupa todo el alto del slide y centra su contenido de forma
+   vertical y horizontal, para un aspecto más equilibrado y profesional. */
+.reveal section.cover {
+  padding-top: 0;
+  height: 100%;
+  min-height: 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.reveal section.cover .cover-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.reveal section.cover .slide-tag {
+  margin-bottom: 0.9em;
+}
+
+.reveal section.cover h1 {
+  margin: 0;
+  line-height: 1.05;
+  font-size: 2.1em;
+}
+
+.reveal section.cover .cover-subtitle {
+  margin: 0.5em 0 0;
+  font-size: 0.85em;
+  color: var(--color-text-muted);
+  max-width: 26ch;
+}
+
+/* Bloque de créditos, lugar y fecha al pie de la portada. */
+.reveal section.cover .cover-meta {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.reveal section.cover .cover-place {
+  margin: 0;
+  font-size: 0.42em;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Enlace discreto a Kuya Code en la portada */
+.reveal section.cover .cover-madeby {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin-top: 4px;
+  font-size: 0.4em;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.reveal section.cover .cover-madeby:hover {
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+.reveal section.cover .cover-madeby .logo-icon {
+  width: 0.95em;
+  height: auto;
+  display: block;
+}
+
+/* --- Descargas de fuentes (slide de Preguntas) -------------------------- */
+.reveal .downloads {
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto 0;
+}
+
+.reveal .downloads__label {
+  display: block;
+  font-size: 0.36em;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 14px;
+}
+
+.reveal .downloads__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  text-align: left;
+  /* Enlaces de descarga reducidos al 40% (un 60% más pequeños). */
+  zoom: 0.4;
+}
+
+.reveal a.download {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--color-surface, #001d3d);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.12));
+  color: var(--color-text, #fff);
+  text-decoration: none;
+  transition: border-color 0.18s ease, transform 0.18s ease, background 0.18s ease;
+}
+
+.reveal a.download:hover {
+  border-color: var(--color-accent, #ffc300);
+  transform: translateY(-2px);
+  background: var(--color-surface-2, rgba(255, 255, 255, 0.06));
+}
+
+.reveal a.download > i {
+  font-size: 1.35em;
+  width: 1.3em;
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.reveal a.download.is-word > i { color: #4ea1ff; }
+.reveal a.download.is-excel > i { color: #34c759; }
+.reveal a.download.is-ppt > i { color: #ff9f0a; }
+.reveal a.download.is-img > i { color: #5ac8fa; }
+.reveal a.download.is-bpm > i { color: var(--color-accent, #ffc300); }
+
+.reveal a.download .download__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.reveal a.download .download__name {
+  font-size: 0.42em;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-text, #fff);
+}
+
+.reveal a.download .download__meta {
+  font-size: 0.3em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
 }
 
 /* --- Entradas y salidas (dos columnas) ---------------------------------- */

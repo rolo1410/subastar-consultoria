@@ -1,0 +1,107 @@
+/* Gráfico de resultados DCAM — usa la paleta centralizada */
+
+.reveal .dcam {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  max-width: 1020px;
+  margin: 10px auto 0;
+}
+
+.reveal .dcam-row {
+  display: grid;
+  grid-template-columns: 250px 1fr 46px;
+  align-items: center;
+  gap: 14px;
+  padding: 5px 8px;
+  border: none;
+  border-radius: 10px;
+  background: none;
+  color: var(--color-text, #fff);
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.reveal .dcam-row:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.reveal .dcam-row__label {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+.reveal .dcam-row__label small {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-muted, rgba(255, 255, 255, 0.6));
+}
+
+.reveal .dcam-row__track {
+  position: relative;
+  height: 20px;
+  border-radius: 10px;
+  background: var(--color-surface, #001d3d);
+  overflow: hidden;
+}
+
+.reveal .dcam-row__fill {
+  display: block;
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal .dcam-row__score {
+  font-size: 17px;
+  font-weight: 800;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Colores por nivel de madurez */
+.reveal .lvl-red { background: #ff4d4d; }       /* No iniciado (<1.5) */
+.reveal .lvl-amber { background: #ffc300; }      /* Conceptual (1.5–2.9) */
+.reveal .lvl-blue { background: #58b0ea; }       /* En desarrollo (3–3.9) */
+.reveal .lvl-green { background: #57c98a; }      /* Definido (>=4) */
+
+.reveal .dcam-row__score.lvl-red { color: #ff6b6b; background: none; }
+.reveal .dcam-row__score.lvl-amber { color: var(--color-accent, #ffc300); background: none; }
+.reveal .dcam-row__score.lvl-blue { color: #58b0ea; background: none; }
+.reveal .dcam-row__score.lvl-green { color: #57c98a; background: none; }
+
+/* Badge del puntaje global */
+.reveal .dcam-overall {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 22px;
+  border-radius: 14px;
+  background: var(--color-accent, #ffc300);
+  color: var(--ink-black, #000814);
+}
+.reveal .dcam-overall b { font-size: 1.4em; font-weight: 800; }
+
+/* Leyenda de niveles */
+.reveal .dcam-legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--color-text-muted, rgba(255, 255, 255, 0.65));
+}
+.reveal .dcam-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.reveal .dcam-legend i {
+  width: 13px;
+  height: 13px;
+  border-radius: 3px;
+}

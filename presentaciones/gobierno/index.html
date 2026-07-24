@@ -5,69 +5,320 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gobierno — GIZ</title>
 </head>
-<body data-deck-title="Gobierno">
+<body data-deck-title="Gobierno de Datos">
   <div class="reveal">
     <div class="slides">
-      <section>
-        <span class="slide-tag">Gobierno</span>
-        <h1>Gobierno</h1>
-        <p>Estructura de gobernanza y toma de decisiones</p>
-        <div class="cover-logos">
-          <span class="logo"><img src="../assets/images/giz.png" alt="GIZ" /></span>
-          <span class="logo"><img src="../assets/images/sifae.png" alt="SIFAE" /></span>
-          <span class="logo"><img src="../assets/images/subastar.png" alt="Subastar" /></span>
+      <!-- Portada -->
+      <section class="cover has-watermark">
+        <img class="slide-watermark" src="../assets/images/ganado.png" alt="" aria-hidden="true" />
+        <div class="cover-inner">
+          <span class="slide-tag">Gobierno</span>
+          <h1>Gobierno de Datos</h1>
+          <p class="cover-subtitle">Diagnóstico y hoja de ruta con metodología DCAM</p>
+          <div class="cover-sponsors">
+            <span class="cover-sponsors__label">Con el apoyo de</span>
+            <div class="cover-logos">
+              <span class="logo"><img src="../assets/images/giz.png" alt="GIZ" /></span>
+              <span class="logo"><img src="../assets/images/sifae.png" alt="SIFAE" /></span>
+              <span class="logo"><img src="../assets/images/subastar.png" alt="Subastar" /></span>
+              <span class="logo"><img src="../assets/images/chone.png" alt="GAD Chone" /></span>
+              <span class="logo"><img src="../assets/images/ecudaor.png" alt="Ecuador" /></span>
+            </div>
+          </div>
+          <div class="cover-meta">
+            <p class="cover-credit">Elaborado por Casigña Rolando · Bryan Sánchez</p>
+            <p class="cover-place">Quito, Ecuador · Julio de 2026</p>
+            <a class="cover-madeby" href="https://kuyacode.com/" target="_blank" rel="noopener noreferrer">
+              <svg class="logo-icon" viewBox="0 0 40 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="18" y="34" width="4" height="12" rx="2" fill="currentColor"></rect><line x1="20" y1="34" x2="20" y2="24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></line><line x1="20" y1="24" x2="13" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line><line x1="20" y1="24" x2="27" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line><line x1="13" y1="16" x2="9" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></line><line x1="13" y1="16" x2="17" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></line><line x1="27" y1="16" x2="23" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></line><line x1="27" y1="16" x2="31" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></line><circle cx="9" cy="7" r="3.5" fill="currentColor"></circle><circle cx="17" cy="7" r="3.5" fill="currentColor"></circle><circle cx="23" cy="7" r="3.5" fill="currentColor"></circle><circle cx="31" cy="7" r="3.5" fill="currentColor"></circle><circle cx="13" cy="14" r="2.5" fill="currentColor" opacity="0.6"></circle><circle cx="27" cy="14" r="2.5" fill="currentColor" opacity="0.6"></circle></svg>
+              kuyacode.com
+            </a>
+          </div>
         </div>
       </section>
 
+      <!-- Agenda -->
       <section>
         <h2>Agenda</h2>
-        <ul>
-          <li>Modelo de gobernanza</li>
-          <li>Roles y responsabilidades</li>
-          <li>Vinculación CIESA – SRI</li>
-          <li>Órganos de decisión</li>
-          <li>Indicadores de seguimiento</li>
-        </ul>
+        <ol>
+          <li>Estado actual y madurez de los datos</li>
+          <li>Resultado DCAM · 8 componentes</li>
+          <li>Conclusión del diagnóstico y vinculación CIESA – SRI</li>
+          <li>Brechas actuales y plan de acción</li>
+        </ol>
+        <p style="font-size: 0.5em; color: var(--color-text-muted); margin-top: 18px;">
+          Estructura basada en el modelo <strong>DCAM</strong> (Data Management
+          Capability Assessment Model).
+        </p>
+        <aside class="notes">
+          El recorrido: primero el estado actual y la madurez global de los datos,
+          luego el resultado detallado del DCAM por sus 8 componentes, la conclusión
+          del diagnóstico con el ejemplo de la vinculación CIESA–SRI y, finalmente,
+          las brechas y el plan de acción. Aclarar que DCAM es un estándar
+          internacional de evaluación de gestión de datos; nos da una foto objetiva y
+          comparable.
+        </aside>
       </section>
 
+      <!-- Estado actual y madurez (Introducción) -->
       <section>
-        <h2>Modelo de gobernanza</h2>
-        <p>Describe aquí el modelo propuesto.</p>
-        <aside class="notes">Notas para el presentador.</aside>
-      </section>
-
-      <section>
-        <h2>Roles y responsabilidades</h2>
-        <p>Matriz RACI o descripción de roles.</p>
-      </section>
-
-      <!-- Vinculación CIESA – SRI -->
-      <section>
-        <h2>Vinculación CIESA – SRI</h2>
-        <p style="font-size: 0.62em;">
-          El sistema contable <strong>CIESA</strong> (operado desde Colombia) se
-          vincula con el <strong>SRI</strong> de Ecuador como un mecanismo de
-          <strong>validación automática</strong> de la facturación. El sistema
-          local (<em>Menú SIS</em>) <strong>no se conecta directamente</strong>
-          con el SRI: toda la validación se realiza a través de CIESA.
+        <h2>Estado actual y madurez</h2>
+        <p style="font-size: 0.55em;">
+          Diagnóstico del nivel de madurez en la gestión de datos de Subastar
+          según DCAM (escala 1 a 6).
         </p>
 
-        <div class="cards-grid">
-          <button class="info-card fragment" data-modal="csr-exportacion">
+        <!-- Escala de madurez -->
+        <div style="display:flex; justify-content:center; gap:10px; margin:26px 0 6px;">
+          <div style="flex:0 0 auto; text-align:center; padding:14px 18px; border-radius:14px; background:var(--color-accent); color:var(--ink-black);">
+            <div style="font-size:0.5em; font-weight:700; letter-spacing:.05em;">PUNTAJE GLOBAL</div>
+            <div style="font-size:1.1em; font-weight:800; line-height:1;">2.2 · Conceptual</div>
+          </div>
+        </div>
+        <div style="display:flex; justify-content:center; gap:6px; margin:14px 0;">
+          <span style="width:70px; height:10px; border-radius:6px; background:var(--color-accent);"></span>
+          <span style="width:70px; height:10px; border-radius:6px; background:var(--color-accent);"></span>
+          <span style="width:70px; height:10px; border-radius:6px; background:var(--color-surface-2);"></span>
+          <span style="width:70px; height:10px; border-radius:6px; background:var(--color-surface-2);"></span>
+          <span style="width:70px; height:10px; border-radius:6px; background:var(--color-surface-2);"></span>
+          <span style="width:70px; height:10px; border-radius:6px; background:var(--color-surface-2);"></span>
+        </div>
+
+        <div class="cards-grid" style="margin-top:22px;">
+          <button class="info-card" data-modal="ga-diagnostico">
+            <span class="info-card__icon"><i class="fa-solid fa-clipboard-list"></i></span>
+            <h3>Diagnóstico inicial</h3>
+            <p>Sistema robusto e inmutable, pero sin documentación formal.</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+
+          <button class="info-card" data-modal="ga-centralizacion">
+            <span class="info-card__icon"><i class="fa-solid fa-sitemap"></i></span>
+            <h3>Centralización</h3>
+            <p>Infraestructura en Colombia; operación local en Ecuador.</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+        </div>
+
+        <template id="ga-diagnostico">
+          <h3>Diagnóstico inicial</h3>
+          <p>
+            La empresa obtiene un <strong>puntaje general de madurez de 2.2</strong>,
+            ubicándose en un nivel <strong>Conceptual</strong>. Tiene sistemas
+            operativos robustos y personal consciente de la importancia de los datos
+            (madurez <em>de facto</em>), pero carece de estrategia, documentación
+            formal y programas sistemáticos de mejora a nivel local.
+          </p>
+        </template>
+
+        <template id="ga-centralizacion">
+          <h3>Centralización</h3>
+          <p>
+            La infraestructura tecnológica, la base de datos y los procesos de
+            <strong>auditoría están centralizados exclusivamente en Colombia</strong>,
+            mientras que la <strong>responsabilidad operativa</strong> recae
+            localmente en <strong>Ecuador</strong>.
+          </p>
+        </template>
+        <aside class="notes">
+          El puntaje global es 2.2 sobre 6: nivel Conceptual. La barra muestra que
+          estamos en el segundo peldaño de seis. La lectura clave: Subastar tiene una
+          madurez «de facto» alta —sistemas robustos y personal consciente del valor
+          del dato— pero una madurez «documentada» baja: falta estrategia, políticas y
+          mejora sistemática a nivel local. El segundo factor es la centralización:
+          infraestructura, base de datos y auditoría viven en Colombia, mientras la
+          responsabilidad operativa está en Ecuador. Se puede abrir las dos tarjetas
+          para el detalle.
+        </aside>
+      </section>
+
+      <!-- Resultado DCAM (8 componentes) -->
+      <section>
+        <h2>Resultado DCAM</h2>
+        <p style="font-size: 0.5em; margin-bottom: 6px;">
+          Puntaje de madurez por componente (escala 1 a 6).
+          <em>Haz clic en cada barra para ver el hallazgo.</em>
+        </p>
+        <div style="text-align:center; margin: 6px 0 4px;">
+          <span class="dcam-overall"><span style="font-size:0.6em;">GLOBAL</span> <b>2.2</b> <span style="font-size:0.6em;">/ 6 · Conceptual</span></span>
+        </div>
+
+        <div class="dcam">
+          <button class="dcam-row" data-modal="dcam-c1">
+            <span class="dcam-row__label">C1 · Estrategia de gestión de datos <small>Definido</small></span>
+            <span class="dcam-row__track"><span class="dcam-row__fill lvl-green" style="width:71.7%"></span></span>
+            <span class="dcam-row__score lvl-green">4.3</span>
+          </button>
+          <button class="dcam-row" data-modal="dcam-c8">
+            <span class="dcam-row__label">C8 · Analítica, reportes y acceso <small>En desarrollo</small></span>
+            <span class="dcam-row__track"><span class="dcam-row__fill lvl-blue" style="width:50%"></span></span>
+            <span class="dcam-row__score lvl-blue">3.0</span>
+          </button>
+          <button class="dcam-row" data-modal="dcam-c2">
+            <span class="dcam-row__label">C2 · Programa y financiamiento <small>Conceptual</small></span>
+            <span class="dcam-row__track"><span class="dcam-row__fill lvl-amber" style="width:38.3%"></span></span>
+            <span class="dcam-row__score lvl-amber">2.3</span>
+          </button>
+          <button class="dcam-row" data-modal="dcam-c4">
+            <span class="dcam-row__label">C4 · Arquitectura de datos <small>Conceptual</small></span>
+            <span class="dcam-row__track"><span class="dcam-row__fill lvl-amber" style="width:33.3%"></span></span>
+            <span class="dcam-row__score lvl-amber">2.0</span>
+          </button>
+          <button class="dcam-row" data-modal="dcam-c5">
+            <span class="dcam-row__label">C5 · Calidad de datos <small>Conceptual</small></span>
+            <span class="dcam-row__track"><span class="dcam-row__fill lvl-amber" style="width:33.3%"></span></span>
+            <span class="dcam-row__score lvl-amber">2.0</span>
+          </button>
+          <button class="dcam-row" data-modal="dcam-c3">
+            <span class="dcam-row__label">C3 · Gobernanza de datos <small>Conceptual</small></span>
+            <span class="dcam-row__track"><span class="dcam-row__fill lvl-amber" style="width:30%"></span></span>
+            <span class="dcam-row__score lvl-amber">1.8</span>
+          </button>
+          <button class="dcam-row" data-modal="dcam-c6">
+            <span class="dcam-row__label">C6 · Control y riesgo de datos <small>No iniciado</small></span>
+            <span class="dcam-row__track"><span class="dcam-row__fill lvl-red" style="width:21.7%"></span></span>
+            <span class="dcam-row__score lvl-red">1.3</span>
+          </button>
+          <button class="dcam-row" data-modal="dcam-c7">
+            <span class="dcam-row__label">C7 · Metadatos e integración <small>No iniciado</small></span>
+            <span class="dcam-row__track"><span class="dcam-row__fill lvl-red" style="width:16.7%"></span></span>
+            <span class="dcam-row__score lvl-red">1.0</span>
+          </button>
+        </div>
+
+        <div class="dcam-legend">
+          <span><i class="lvl-green"></i> Definido (4–5)</span>
+          <span><i class="lvl-blue"></i> En desarrollo (3)</span>
+          <span><i class="lvl-amber"></i> Conceptual (1.5–2.9)</span>
+          <span><i class="lvl-red"></i> No iniciado (&lt;1.5)</span>
+        </div>
+
+        <!-- Modales por componente -->
+        <template id="dcam-c1">
+          <h3>C1 · Estrategia de gestión de datos — 4.3 (Definido)</h3>
+          <p>
+            Es el <strong>pilar más fuerte</strong>. Los objetivos están totalmente
+            alineados con el negocio (atraer mejores compradores según volúmenes) y
+            existen <strong>métricas de valor muy bien desarrolladas</strong> que la
+            gerencia revisa constantemente.
+          </p>
+        </template>
+        <template id="dcam-c8">
+          <h3>C8 · Analítica, reportes y acceso — 3.0 (En desarrollo)</h3>
+          <p>
+            Cuentan con una <strong>buena visibilidad ejecutiva</strong> y tableros
+            operativos que apoyan directamente la <strong>toma de decisiones</strong>.
+          </p>
+        </template>
+        <template id="dcam-c2">
+          <h3>C2 · Programa y financiamiento — 2.3 (Conceptual)</h3>
+          <p>
+            Aunque los roles de quién maneja qué módulo en el sistema están claros,
+            <strong>carecen de un caso de negocio justificado</strong> y no cuentan
+            con un <strong>presupuesto local (en Ecuador)</strong> para invertir en
+            gobernanza de datos.
+          </p>
+        </template>
+        <template id="dcam-c4">
+          <h3>C4 · Arquitectura de datos — 2.0 (Conceptual)</h3>
+          <p>
+            El equipo conoce perfectamente cómo fluyen los datos (Web → Pesaje →
+            Display → Menú SIS → CIESA). Sin embargo, <strong>no existe un modelo de
+            datos documentado</strong> accesible a nivel local y faltan
+            <strong>integraciones automáticas</strong> con entes externos como SIFAE.
+          </p>
+        </template>
+        <template id="dcam-c5">
+          <h3>C5 · Calidad de datos — 2.0 (Conceptual)</h3>
+          <p>
+            El sistema en sí mismo bloquea errores y valida campos duplicados, pero
+            <strong>no existe un monitoreo sistemático de la calidad</strong>
+            (perfilado) ni procesos formales documentados para el análisis y
+            corrección de errores.
+          </p>
+        </template>
+        <template id="dcam-c3">
+          <h3>C3 · Gobernanza de datos — 1.8 (Conceptual)</h3>
+          <p>
+            Existen responsables fácticos operativos, pero <strong>no hay un comité
+            de gobernanza</strong> establecido a nivel local para la toma de
+            decisiones o la resolución de conflictos, ni un <strong>glosario de
+            términos formales</strong> documentado.
+          </p>
+        </template>
+        <template id="dcam-c6">
+          <h3>C6 · Control y riesgo de datos — 1.3 (No iniciado)</h3>
+          <p>
+            Hay debilidades en la <strong>documentación de controles de
+            seguridad</strong>, la clasificación de datos y los reportes de
+            <strong>cumplimiento normativo</strong> formalizados.
+          </p>
+        </template>
+        <template id="dcam-c7">
+          <h3>C7 · Metadatos e integración — 1.0 (No iniciado)</h3>
+          <p>
+            Es el componente más bajo. Subastar <strong>carece completamente de un
+            diccionario de datos</strong> y no tiene documentado el <strong>linaje de
+            la información</strong> (cómo viaja y se transforma exactamente un dato en
+            la base).
+          </p>
+        </template>
+        <aside class="notes">
+          Aquí está el desglose por los 8 componentes, ordenados de mayor a menor. Lo
+          fuerte primero: C1 Estrategia (4.3, Definido) es el pilar, con objetivos
+          alineados al negocio y buenas métricas; C8 Analítica (3.0) también aporta
+          con buena visibilidad ejecutiva. Luego la zona conceptual: programa,
+          arquitectura, calidad y gobernanza, todos entre 1.8 y 2.3. Y lo crítico, en
+          rojo: C6 Control y riesgo (1.3) y sobre todo C7 Metadatos e integración
+          (1.0), el más bajo, porque no hay diccionario de datos ni linaje documentado.
+          Se puede hacer clic en cada barra para ver el hallazgo específico. Patrón: la
+          empresa sabe qué hacer y para qué, pero no lo tiene documentado ni controlado.
+        </aside>
+      </section>
+
+      <!-- Conclusión del diagnóstico + Vinculación CIESA–SRI -->
+      <section>
+        <h2>Conclusión del diagnóstico</h2>
+        <p style="font-size: 0.5em; max-width: 34em; margin: 4px auto 14px;">
+          Existe una gran diferencia entre la <strong>madurez de facto</strong> y la
+          <strong>madurez documentada</strong>: el proceso funciona en la práctica
+          gracias a las restricciones del sistema colombiano (Menú SIS), pero es
+          vulnerable por operar sin documentación local.
+        </p>
+
+        <div class="cards-grid" style="max-width: 820px; margin: 0 auto;">
+          <div class="info-card" style="cursor:default; padding:16px 18px;">
+            <span class="info-card__icon"><i class="fa-solid fa-circle-check"></i></span>
+            <h3>Funciona en la práctica</h3>
+            <p>Opera muy bien gracias a las restricciones tecnológicas del sistema
+            colombiano (Menú SIS).</p>
+          </div>
+          <div class="info-card" style="cursor:default; padding:16px 18px;">
+            <span class="info-card__icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+            <h3>Pero es vulnerable</h3>
+            <p>Sin manuales ni políticas propias de Ecuador que soporten el
+            crecimiento a largo plazo.</p>
+          </div>
+        </div>
+
+        <p style="font-size: 0.46em; color: var(--color-text-muted); margin: 22px 0 8px; text-align:center;">
+          Ejemplo de control «de facto»: la <strong>Vinculación CIESA – SRI</strong>
+          valida automáticamente la facturación (el Menú SIS no se conecta directo al SRI).
+        </p>
+
+        <div class="cards-grid" style="max-width: 980px; margin: 0 auto;">
+          <button class="info-card" data-modal="csr-exportacion" style="padding:16px 18px;">
             <span class="info-card__icon"><i class="fa-solid fa-file-export"></i></span>
-            <h3>1 · Exportación de datos</h3>
-            <p>La facturación generada en el Menú SIS se exporta hacia CIESA.</p>
+            <h3>1 · Exportación</h3>
+            <p>La facturación del Menú SIS se exporta hacia CIESA.</p>
             <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
           </button>
-
-          <button class="info-card fragment" data-modal="csr-validacion">
+          <button class="info-card" data-modal="csr-validacion" style="padding:16px 18px;">
             <span class="info-card__icon"><i class="fa-solid fa-clock-rotate-left"></i></span>
-            <h3>2 · Validación en tiempo real</h3>
-            <p>CIESA consulta la base del SRI para verificar los datos del usuario.</p>
+            <h3>2 · Validación</h3>
+            <p>CIESA consulta la base del SRI para verificar los datos.</p>
             <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
           </button>
-
-          <button class="info-card fragment" data-modal="csr-errores">
+          <button class="info-card" data-modal="csr-errores" style="padding:16px 18px;">
             <span class="info-card__icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
             <h3>3 · Detección de errores</h3>
             <p>Si la cédula o el RUC no coinciden, la factura no se carga.</p>
@@ -75,13 +326,7 @@
           </button>
         </div>
 
-        <p class="fragment" style="font-size: 0.5em; color: var(--color-text-muted);">
-          Resultado: se evita la emisión de facturas con datos inválidos, ya que
-          la información debe coincidir con los registros oficiales del SRI antes
-          de cargarse.
-        </p>
-
-        <!-- Contenido de los modales -->
+        <!-- Modales de la vinculación CIESA–SRI -->
         <template id="csr-exportacion">
           <h3>1 · Exportación de datos</h3>
           <p>
@@ -92,37 +337,128 @@
             de los datos que CIESA recibirá para su validación.
           </p>
         </template>
-
         <template id="csr-validacion">
           <h3>2 · Validación en tiempo real</h3>
           <p>
-            Al momento de recibir los datos, <strong>CIESA se conecta con la base
-            de datos del SRI</strong> para verificar que la información del usuario
-            sea correcta. Esta comprobación ocurre de forma automática, sin
-            intervención manual, contrastando cada registro contra los datos
-            oficiales del contribuyente.
+            Al recibir los datos, <strong>CIESA se conecta con la base de datos del
+            SRI</strong> para verificar que la información del usuario sea correcta.
+            La comprobación es automática, contrastando cada registro contra los
+            datos oficiales del contribuyente.
           </p>
         </template>
-
         <template id="csr-errores">
           <h3>3 · Detección de errores</h3>
           <p>
-            El programa detecta inmediatamente cualquier dato erróneo —por
-            ejemplo, un número de <strong>cédula o RUC incorrecto</strong>. Si la
-            información no coincide con los registros del SRI,
-            <strong>la facturación no se carga correctamente</strong>, lo que
-            evita la emisión de facturas con datos inválidos.
+            El programa detecta cualquier dato erróneo —por ejemplo una
+            <strong>cédula o RUC incorrecto</strong>. Si no coincide con los
+            registros del SRI, <strong>la facturación no se carga</strong>, evitando
+            la emisión de facturas con datos inválidos.
           </p>
         </template>
+        <aside class="notes">
+          La conclusión del diagnóstico en una frase: hay una brecha entre lo que
+          funciona en la práctica y lo que está documentado. El proceso opera bien,
+          pero gracias a las restricciones del sistema colombiano (Menú SIS), no a
+          políticas propias; por eso es vulnerable si ese soporte cambia o si se quiere
+          crecer. El mejor ejemplo de un control «de facto» es la vinculación
+          CIESA–SRI: el Menú SIS no habla directo con el SRI; exporta a CIESA, que
+          valida en tiempo real contra la base del SRI y rechaza la factura si la cédula
+          o el RUC no coinciden. Se pueden abrir las tres tarjetas para explicar el
+          flujo paso a paso.
+        </aside>
       </section>
 
+      <!-- Brechas y Plan de Acción -->
       <section>
-        <h2>Gracias</h2>
-        <p>Preguntas y comentarios</p>
+        <h2>Brechas actuales y plan de acción</h2>
+        <p style="font-size: 0.55em;">
+          Pasos inmediatos para solucionar las debilidades críticas encontradas.
+        </p>
+
+        <div class="cards-grid">
+          <button class="info-card" data-modal="gap-geo">
+            <span class="info-card__icon"><i class="fa-solid fa-location-dot"></i></span>
+            <h3>Georreferenciación exacta</h3>
+            <p>Coordenadas precisas de las fincas de origen.</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+
+          <button class="info-card" data-modal="gap-api">
+            <span class="info-card__icon"><i class="fa-solid fa-plug-circle-bolt"></i></span>
+            <h3>Integración automatizada</h3>
+            <p>APIs con SIFAE / Agrocalidad para validar guías.</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+
+          <button class="info-card" data-modal="gap-trazabilidad">
+            <span class="info-card__icon"><i class="fa-solid fa-tag"></i></span>
+            <h3>Trazabilidad individual</h3>
+            <p>Identificadores por animal (chips o aretes).</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+        </div>
+
+        <template id="gap-geo">
+          <h3>Georreferenciación exacta</h3>
+          <p>
+            La gerencia necesita capturar <strong>coordenadas geográficas
+            precisas de las fincas</strong>, ya que actualmente solo se conoce el
+            <strong>cantón de origen general</strong> que dicta la guía.
+          </p>
+        </template>
+        <template id="gap-api">
+          <h3>Integración automatizada</h3>
+          <p>
+            Proponer <strong>integraciones tipo API</strong> con entidades
+            gubernamentales (<strong>SIFAE / Agrocalidad</strong>) para validar la
+            información de las guías de forma automática, y no solo mediante
+            revisión visual de documentos impresos.
+          </p>
+        </template>
+        <template id="gap-trazabilidad">
+          <h3>Trazabilidad individual</h3>
+          <p>
+            El sistema actual solo rastrea por <strong>"lotes"</strong>: si un
+            animal regresa a subastarse meses después, el sistema lo
+            <strong>duplica</strong> creando un registro nuevo sin conservar su
+            historial. Propuesta: usar <strong>identificadores individuales</strong>
+            (chips o aretes).
+          </p>
+        </template>
+        <aside class="notes">
+          Cierre con acciones concretas sobre las brechas críticas. Uno:
+          georreferenciación exacta —hoy solo se conoce el cantón que dicta la guía;
+          hace falta la coordenada precisa de la finca. Dos: integración automatizada
+          vía API con SIFAE/Agrocalidad, para dejar de validar guías a ojo sobre papel.
+          Tres, y quizá la más importante para el negocio: trazabilidad individual —hoy
+          se rastrea por lotes, y si un animal vuelve a subastarse el sistema lo
+          duplica y pierde su historial; la propuesta es identificar por animal con
+          chips o aretes. Estas tres acciones son la antesala de la presentación de
+          Recomendaciones.
+        </aside>
+      </section>
+
+      <!-- Preguntas -->
+      <section class="has-watermark">
+        <img class="slide-watermark" src="../assets/images/ganado.png" alt="" aria-hidden="true" />
+        <span class="slide-tag">Cierre Gobierno</span>
+        <h1><i class="fa-solid fa-circle-question"></i> Preguntas</h1>
+        <p>¿Preguntas o comentarios?</p>
       </section>
     </div>
   </div>
   <div class="footer">GIZ · Gobierno</div>
+
+  <!-- Fuentes descargables (se muestran como iconos en el header) -->
+  <template id="deck-sources">
+    <a href="fuentes/2026_06_11_GD_EVA_DCAM_SUBASTAR.xlsx" data-type="excel" data-label="Evaluación DCAM (Excel)"></a>
+    <a href="fuentes/Informe_Gobernanza_Datos_Subastar_Ecuador.docx" data-type="word" data-label="Informe de Gobernanza de Datos"></a>
+    <a href="fuentes/2026_06_11_GD_GE_GERENTE.docx" data-type="word" data-label="Guía de entrevista · Gerente"></a>
+    <a href="fuentes/2026_06_11_GD_GE_RESPONSABLE%20DE%20TI.docx" data-type="word" data-label="Guía de entrevista · Responsable de TI"></a>
+    <a href="fuentes/2026_06_11_GD_GE_RESPONSABLE%20BASE%20DE%20DATOS.docx" data-type="word" data-label="Guía de entrevista · Responsable de base de datos"></a>
+    <a href="fuentes/2026_06_11_GD_GE_PERFIL_USUARIO_OPERATIVO.docx" data-type="word" data-label="Guía de entrevista · Usuario operativo"></a>
+  </template>
+
   <script type="module" src="/src/init.js"></script>
 </body>
 </html>
