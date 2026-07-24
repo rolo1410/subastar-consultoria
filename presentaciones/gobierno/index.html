@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gobierno — GIZ</title>
+</head>
+<body data-deck-title="Gobierno">
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <span class="slide-tag">Gobierno</span>
+        <h1>Gobierno</h1>
+        <p>Estructura de gobernanza y toma de decisiones</p>
+        <div class="cover-logos">
+          <span class="logo"><img src="../assets/images/giz.png" alt="GIZ" /></span>
+          <span class="logo"><img src="../assets/images/sifae.png" alt="SIFAE" /></span>
+          <span class="logo"><img src="../assets/images/subastar.png" alt="Subastar" /></span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Agenda</h2>
+        <ul>
+          <li>Modelo de gobernanza</li>
+          <li>Roles y responsabilidades</li>
+          <li>Vinculación CIESA – SRI</li>
+          <li>Órganos de decisión</li>
+          <li>Indicadores de seguimiento</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Modelo de gobernanza</h2>
+        <p>Describe aquí el modelo propuesto.</p>
+        <aside class="notes">Notas para el presentador.</aside>
+      </section>
+
+      <section>
+        <h2>Roles y responsabilidades</h2>
+        <p>Matriz RACI o descripción de roles.</p>
+      </section>
+
+      <!-- Vinculación CIESA – SRI -->
+      <section>
+        <h2>Vinculación CIESA – SRI</h2>
+        <p style="font-size: 0.62em;">
+          El sistema contable <strong>CIESA</strong> (operado desde Colombia) se
+          vincula con el <strong>SRI</strong> de Ecuador como un mecanismo de
+          <strong>validación automática</strong> de la facturación. El sistema
+          local (<em>Menú SIS</em>) <strong>no se conecta directamente</strong>
+          con el SRI: toda la validación se realiza a través de CIESA.
+        </p>
+
+        <div class="cards-grid">
+          <button class="info-card fragment" data-modal="csr-exportacion">
+            <span class="info-card__icon"><i class="fa-solid fa-file-export"></i></span>
+            <h3>1 · Exportación de datos</h3>
+            <p>La facturación generada en el Menú SIS se exporta hacia CIESA.</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+
+          <button class="info-card fragment" data-modal="csr-validacion">
+            <span class="info-card__icon"><i class="fa-solid fa-clock-rotate-left"></i></span>
+            <h3>2 · Validación en tiempo real</h3>
+            <p>CIESA consulta la base del SRI para verificar los datos del usuario.</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+
+          <button class="info-card fragment" data-modal="csr-errores">
+            <span class="info-card__icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+            <h3>3 · Detección de errores</h3>
+            <p>Si la cédula o el RUC no coinciden, la factura no se carga.</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+        </div>
+
+        <p class="fragment" style="font-size: 0.5em; color: var(--color-text-muted);">
+          Resultado: se evita la emisión de facturas con datos inválidos, ya que
+          la información debe coincidir con los registros oficiales del SRI antes
+          de cargarse.
+        </p>
+
+        <!-- Contenido de los modales -->
+        <template id="csr-exportacion">
+          <h3>1 · Exportación de datos</h3>
+          <p>
+            La información de facturación se genera localmente en el sistema
+            principal de Subastar (<strong>Menú SIS</strong>) y desde allí se
+            <strong>exporta hacia el software contable CIESA</strong>, operado
+            desde Colombia. El Menú SIS no dialoga con el SRI: actúa como origen
+            de los datos que CIESA recibirá para su validación.
+          </p>
+        </template>
+
+        <template id="csr-validacion">
+          <h3>2 · Validación en tiempo real</h3>
+          <p>
+            Al momento de recibir los datos, <strong>CIESA se conecta con la base
+            de datos del SRI</strong> para verificar que la información del usuario
+            sea correcta. Esta comprobación ocurre de forma automática, sin
+            intervención manual, contrastando cada registro contra los datos
+            oficiales del contribuyente.
+          </p>
+        </template>
+
+        <template id="csr-errores">
+          <h3>3 · Detección de errores</h3>
+          <p>
+            El programa detecta inmediatamente cualquier dato erróneo —por
+            ejemplo, un número de <strong>cédula o RUC incorrecto</strong>. Si la
+            información no coincide con los registros del SRI,
+            <strong>la facturación no se carga correctamente</strong>, lo que
+            evita la emisión de facturas con datos inválidos.
+          </p>
+        </template>
+      </section>
+
+      <section>
+        <h2>Gracias</h2>
+        <p>Preguntas y comentarios</p>
+      </section>
+    </div>
+  </div>
+  <div class="footer">GIZ · Gobierno</div>
+  <script type="module" src="/src/init.js"></script>
+</body>
+</html>

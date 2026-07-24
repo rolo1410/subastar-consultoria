@@ -1,0 +1,239 @@
+/* Grafo de actores — usa la paleta centralizada */
+
+.reveal .actor-graph {
+  position: relative;
+  width: 100%;
+  height: 470px;
+  margin-top: 4px;
+}
+
+.reveal .actor-graph__lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.reveal .actor-edge {
+  stroke: rgba(255, 255, 255, 0.28);
+  stroke-width: 2;
+  transition: stroke 0.18s ease, stroke-width 0.18s ease, opacity 0.18s ease;
+}
+
+/* Enfoque: líneas relacionadas resaltadas / no relacionadas atenuadas */
+.reveal .actor-edge.is-active {
+  stroke: var(--color-accent, #ffc300);
+  stroke-width: 4.5;
+  opacity: 1;
+}
+.reveal .actor-edge.is-dim {
+  opacity: 0.07;
+}
+.reveal .actor-edge--anon.is-active {
+  stroke: #ff4d4d;
+}
+
+/* Relación anónima vendedor–comprador */
+.reveal .actor-edge--anon {
+  stroke: #ff4d4d;
+  stroke-width: 2.5;
+  stroke-dasharray: 7 6;
+}
+
+.reveal .actor-edge__label {
+  fill: #ff6b6b;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  paint-order: stroke;
+  stroke: rgba(0, 8, 20, 0.85);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+/* --- Nodo ---------------------------------------------------------------- */
+.reveal .actor-node {
+  position: absolute;
+  width: 96px;
+  height: 96px;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.reveal .actor-node:hover {
+  z-index: 10;
+}
+
+.reveal .actor-node.is-open {
+  z-index: 30;
+}
+
+.reveal .actor-node__circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface, #001d3d);
+  border: 3px solid var(--color-accent, #ffc300);
+  color: var(--color-text, #fff);
+  font-size: 34px;
+  cursor: default;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.reveal .actor-node:hover .actor-node__circle {
+  transform: scale(1.22);
+  box-shadow: 0 0 0 8px rgba(255, 195, 0, 0.18);
+}
+
+/* Enfoque: nodos relacionados vs. no relacionados */
+.reveal .actor-node {
+  transition: opacity 0.18s ease;
+}
+.reveal .actor-graph.has-focus .actor-node.is-dim {
+  opacity: 0.3;
+}
+.reveal .actor-graph.has-focus .actor-node.is-dim .actor-node__circle {
+  transform: scale(0.78);
+}
+.reveal .actor-graph.has-focus .actor-node.is-neighbor .actor-node__circle {
+  box-shadow: 0 0 0 6px rgba(255, 195, 0, 0.14);
+}
+
+.reveal .actor-node__name {
+  position: absolute;
+  top: calc(100% + 7px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-text, #fff);
+  background: rgba(0, 8, 20, 0.72);
+  padding: 2px 9px;
+  border-radius: 9px;
+  pointer-events: none;
+}
+
+/* Nombre al costado derecho (columna derecha) */
+.reveal .actor-node.name-right .actor-node__name {
+  top: 50%;
+  left: calc(100% + 10px);
+  transform: translateY(-50%);
+}
+
+/* Colores por grupo */
+.reveal .actor-node[data-group='externo'] .actor-node__circle {
+  border-color: #ffc300;
+}
+.reveal .actor-node[data-group='interno'] .actor-node__circle {
+  border-color: #58b0ea;
+}
+.reveal .actor-node[data-group='institucional'] .actor-node__circle {
+  border-color: #57c98a;
+}
+
+/* Nodo central (hub) */
+.reveal .actor-node--hub {
+  width: 124px;
+  height: 124px;
+}
+.reveal .actor-node--hub .actor-node__circle {
+  background: var(--color-accent, #ffc300);
+  border-color: var(--color-accent-2, #ffd60a);
+  color: var(--ink-black, #000814);
+  font-size: 44px;
+}
+.reveal .actor-node--hub .actor-node__name {
+  font-size: 17px;
+  color: var(--color-accent, #ffc300);
+}
+
+/* --- Detalle emergente --------------------------------------------------- */
+.reveal .actor-node__detail {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  width: 300px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--color-surface-2, #003566);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.18));
+  border-top: 3px solid var(--color-accent, #ffc300);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 20;
+  text-align: left;
+}
+
+.reveal .actor-node.is-open .actor-node__detail {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.reveal .actor-node__detail h4 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  color: var(--color-accent, #ffc300);
+}
+
+.reveal .actor-node__detail p {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--color-text, #fff);
+}
+
+/* Dirección de despliegue del detalle */
+.reveal .actor-node.detail-down .actor-node__detail {
+  top: calc(100% + 26px);
+}
+.reveal .actor-node.detail-up .actor-node__detail {
+  bottom: calc(100% + 12px);
+}
+
+.reveal .actor-node.detail-left .actor-node__detail {
+  left: 0;
+  transform: translateX(0) translateY(6px);
+}
+.reveal .actor-node.detail-left.is-open .actor-node__detail {
+  transform: translateX(0) translateY(0);
+}
+
+.reveal .actor-node.detail-right .actor-node__detail {
+  left: auto;
+  right: 0;
+  transform: translateX(0) translateY(6px);
+}
+.reveal .actor-node.detail-right.is-open .actor-node__detail {
+  transform: translateX(0) translateY(0);
+}
+
+/* Leyenda de grupos */
+.reveal .actor-legend {
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  margin-top: 2px;
+  font-size: 14px;
+  color: var(--color-text-muted, rgba(255, 255, 255, 0.7));
+}
+.reveal .actor-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.reveal .actor-legend i {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 3px solid;
+}
+.reveal .actor-legend .lg-ext { border-color: #ffc300; }
+.reveal .actor-legend .lg-int { border-color: #58b0ea; }
+.reveal .actor-legend .lg-inst { border-color: #57c98a; }

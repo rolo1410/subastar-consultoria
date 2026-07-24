@@ -1,0 +1,29 @@
+/* Puntero láser — usa la paleta centralizada (palette.css) */
+
+/* Oculta el cursor real mientras el láser está activo sobre las diapositivas */
+.reveal-viewport.laser-active,
+.reveal-viewport.laser-active * {
+  cursor: none !important;
+}
+
+.laser-dot {
+  position: fixed;
+  z-index: 1000;
+  width: 16px;
+  height: 16px;
+  margin-left: -8px; /* centra el punto en el cursor */
+  margin-top: -8px;
+  border-radius: 50%;
+  pointer-events: none; /* nunca intercepta clics */
+  background: radial-gradient(
+    circle,
+    #ffffff 0%,
+    #ff1a1a 35%,
+    rgba(255, 26, 26, 0.35) 70%,
+    rgba(255, 26, 26, 0) 100%
+  );
+  box-shadow:
+    0 0 8px 3px #ff1a1a,
+    0 0 18px 6px rgba(255, 0, 0, 0.6);
+  transition: box-shadow 0.1s ease;
+}

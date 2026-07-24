@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Procesos — GIZ</title>
+</head>
+<body data-deck-title="Procesos">
+  <div class="reveal">
+    <div class="slides">
+      <!-- Portada -->
+      <section>
+        <span class="slide-tag">Procesos</span>
+        <h1>Procesos</h1>
+        <p>Mapeo de procesos</p>
+        <div class="cover-logos">
+          <span class="logo"><img src="../assets/images/giz.png" alt="GIZ" /></span>
+          <span class="logo"><img src="../assets/images/sifae.png" alt="SIFAE" /></span>
+          <span class="logo"><img src="../assets/images/subastar.png" alt="Subastar" /></span>
+        </div>
+      </section>
+
+      <!-- Agenda -->
+      <section>
+        <h2>Agenda</h2>
+        <ol>
+          <li>Introducción</li>
+          <li>Metodología</li>
+          <li>Alcance</li>
+          <li>Actores</li>
+          <li>Proceso macro</li>
+          <li>Bizagi</li>
+          <li>Entradas y salidas</li>
+          <li>Conclusiones</li>
+          <li>Recomendaciones</li>
+        </ol>
+      </section>
+
+      <!-- Introducción -->
+      <section>
+        <h2>Introducción</h2>
+        <p style="font-size: 0.75em;">
+          Levantamiento del proceso del <strong>ciclo de vida de la movilización
+          del ganado</strong> en la plataforma <strong>Subastar</strong>.
+        </p>
+        <ul style="font-size: 0.72em;">
+          <li class="fragment">
+            <strong>Planificación</strong> de las actividades necesarias y
+            definición de las herramientas y frameworks a utilizar.
+          </li>
+          <li class="fragment">
+            Selección de la metodología <strong>BPM</strong> como enfoque para el
+            análisis del proceso.
+          </li>
+          <li class="fragment">
+            <strong>Abordaje inicial</strong> con los organizadores de la
+            consultoría, identificando a los principales actores.
+          </li>
+          <li class="fragment">
+            Definición de un conjunto de <strong>entrevistas</strong> para
+            desglosar los procesos identificados.
+          </li>
+          <li class="fragment">
+            Modelado del proceso en <strong>Bizagi</strong>, identificando
+            fases, actores y flujos principales.
+          </li>
+        </ul>
+        <aside class="notes">
+          Explicar que la introducción resume el enfoque del levantamiento:
+          planificación → metodología BPM → actores → entrevistas → modelo Bizagi.
+        </aside>
+      </section>
+
+      <!-- Metodología -->
+      <section>
+        <h2>Metodología</h2>
+        <p style="font-size: 0.62em;">
+          Levantamiento de los procesos operativos, comerciales, financieros y de
+          gobierno de datos en <strong>Subastar</strong>, basado en
+          <strong>entrevistas estructuradas</strong> y un
+          <strong>modelo de evaluación de madurez de datos</strong>.
+        </p>
+
+        <div class="cards-grid">
+          <button class="info-card" data-modal="met-entrevistas">
+            <span class="info-card__icon"><i class="fa-solid fa-comments"></i></span>
+            <h3>Entrevistas semiestructuradas</h3>
+            <p>Actores clave de todo el ciclo de vida de la subasta.</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+
+          <button class="info-card" data-modal="met-cuestionarios">
+            <span class="info-card__icon"><i class="fa-solid fa-server"></i></span>
+            <h3>Cuestionarios técnicos</h3>
+            <p>Infraestructura, integraciones y seguridad con TI y BD.</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+
+          <button class="info-card" data-modal="met-dcam">
+            <span class="info-card__icon"><i class="fa-solid fa-chart-column"></i></span>
+            <h3>Metodología DCAM</h3>
+            <p>Evaluación de madurez de la gobernanza de datos (escala 1–6).</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+        </div>
+
+        <p style="font-size: 0.5em; color: var(--color-text-muted);">
+          La combinación metodológica permitió contrastar el uso real del
+          <em>"Menú SIS"</em> y el <em>"Display"</em> frente a las políticas
+          corporativas centralizadas en Colombia, logrando un levantamiento
+          integral del ecosistema de la subasta.
+        </p>
+
+        <!-- Contenido de los modales -->
+        <template id="met-entrevistas">
+          <h3>Entrevistas semiestructuradas a actores clave</h3>
+          <p>
+            Entrevistas dirigidas a los distintos perfiles que interactúan a lo
+            largo de todo el ciclo de vida de la subasta, permitiendo mapear el
+            proceso físico y el flujo de la información. Actores entrevistados:
+          </p>
+          <ul>
+            <li>
+              <strong>Área Estratégica y Administrativa:</strong> Gerente General
+              y Presidente de la Corporación de Ganaderos de Manabí (Corpogam).
+            </li>
+            <li>
+              <strong>Área Operativa y Comercial:</strong> Director Comercial y
+              Director Operativo — pre-mercadeo, recepción de animales,
+              conformación de lotes y dinámica de la puja.
+            </li>
+            <li>
+              <strong>Área Financiera:</strong> Analista financiero — flujo de
+              pagos, facturación y comisiones.
+            </li>
+            <li>
+              <strong>Usuarios Externos:</strong> Ganaderos (proveedores /
+              compradores) — inscripción, traslado del ganado y uso de guías de
+              movilización de Agrocalidad.
+            </li>
+          </ul>
+        </template>
+
+        <template id="met-cuestionarios">
+          <h3>Cuestionarios técnicos de infraestructura</h3>
+          <p>
+            Cuestionario estandarizado dirigido a los responsables de TI y de la
+            Base de Datos, para el levantamiento técnico del sistema. Se indagó
+            sobre:
+          </p>
+          <ul>
+            <li>Arquitectura del sistema</li>
+            <li>Integraciones (APIs)</li>
+            <li>Reglas de validación</li>
+            <li>Auditoría de logs</li>
+            <li>Seguridad y cifrado</li>
+            <li>Respaldos</li>
+          </ul>
+        </template>
+
+        <template id="met-dcam">
+          <h3>Metodología DCAM</h3>
+          <p>
+            <em>Data Management Capability Assessment Model.</em> Empleada para el
+            diagnóstico de la gobernanza de datos mediante una matriz de
+            evaluación con escala del <strong>1 (No iniciado / Conceptual)</strong>
+            al <strong>6 (Mejorado)</strong>, midiendo componentes críticos:
+          </p>
+          <ul>
+            <li>
+              <strong>Componente 1 · Estrategia de gestión de datos:</strong>
+              visión, hoja de ruta y métricas.
+            </li>
+            <li>
+              <strong>Componente 2 · Programa y financiamiento:</strong> caso de
+              negocio y estructura organizacional.
+            </li>
+            <li>
+              <strong>Componente 3 · Gobernanza de datos:</strong> políticas,
+              roles (<em>Data Owners / Stewards</em>) y glosario de términos.
+            </li>
+            <li>
+              <strong>Componente 4 · Arquitectura de datos:</strong> modelos
+              entidad-relación y flujo entre sistemas.
+            </li>
+          </ul>
+        </template>
+      </section>
+
+      <!-- Alcance -->
+      <section>
+        <h2>Alcance</h2>
+        <p style="font-size: 0.6em;">
+          Abarca el <strong>ciclo de vida completo</strong> del negocio de subastas
+          ganaderas en Subastar — desde la captación de clientes hasta el pago
+          final y despacho de los animales — cruzando las capas tecnológica,
+          financiera y de gobierno de datos.
+        </p>
+
+        <div class="hub-diagram">
+          <div class="hub">
+            <span class="hub__icon"><i class="fa-solid fa-arrows-to-circle"></i></span>
+            <span class="hub__title">Ciclo de vida de la subasta</span>
+          </div>
+
+          <button class="info-card" data-modal="alc-operativo">
+            <span class="info-card__icon"><i class="fa-solid fa-cow"></i></span>
+            <h3>Operativo y Comercial</h3>
+            <p>End-to-end de la subasta: flujo físico y lógico.</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+
+          <button class="info-card" data-modal="alc-tecnologico">
+            <span class="info-card__icon"><i class="fa-solid fa-microchip"></i></span>
+            <h3>Tecnológico y Arquitectura</h3>
+            <p>Módulos del sistema, base de datos y seguridad.</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+
+          <button class="info-card" data-modal="alc-financiero">
+            <span class="info-card__icon"><i class="fa-solid fa-file-invoice-dollar"></i></span>
+            <h3>Financiero y Administrativo</h3>
+            <p>Pagos, comisiones e integración contable.</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+
+          <button class="info-card" data-modal="alc-gobierno">
+            <span class="info-card__icon"><i class="fa-solid fa-database"></i></span>
+            <h3>Estratégico y Gobierno de Datos</h3>
+            <p>Madurez DCAM, políticas y toma de decisiones.</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+
+          <button class="info-card" data-modal="alc-actores">
+            <span class="info-card__icon"><i class="fa-solid fa-users"></i></span>
+            <h3>Actores (Perspectiva 360°)</h3>
+            <p>Cadena de valor interna y usuarios externos.</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+        </div>
+
+        <!-- Contenido de los modales -->
+        <template id="alc-operativo">
+          <h3>Alcance Operativo y Comercial (End-to-End)</h3>
+          <p>Se mapeó todo el flujo físico y lógico de los animales y los clientes:</p>
+          <ul>
+            <li>
+              <strong>Captación y Premercadeo:</strong> búsqueda de clientes
+              (prospectos), registro inicial y comunicación previa con compradores
+              para asegurar volumen y competitividad.
+            </li>
+            <li>
+              <strong>Recepción y Trazabilidad Inicial:</strong> llegada del
+              ganado, verificación física de la Guía de Movilización emitida por
+              el sistema estatal <strong>SIFAE</strong> e ingreso a los corrales.
+            </li>
+            <li>
+              <strong>Proceso Interno (Loteo y Pesaje):</strong> agrupación de
+              animales con características similares, pesaje físico y registro de
+              los datos operativos antes de salir a la pista.
+            </li>
+            <li>
+              <strong>La Puja y Despacho:</strong> dinámica de la subasta
+              (presencial y virtual), registro de precios, opción de
+              "autosubasta" y tiempos de retiro de los animales (24 horas).
+            </li>
+          </ul>
+        </template>
+
+        <template id="alc-tecnologico">
+          <h3>Alcance Tecnológico y de Arquitectura</h3>
+          <p>Profundizó en la infraestructura que soporta la operación:</p>
+          <ul>
+            <li>
+              <strong>Módulos del Sistema:</strong> interacción entre los
+              componentes usados localmente — registro web de clientes, módulo de
+              pesaje (uso exclusivo operativo), el <em>Display</em> (visualización
+              de la puja) y el sistema central <strong>Menú SIS</strong>.
+            </li>
+            <li>
+              <strong>Base de Datos y Seguridad:</strong> perfiles de usuario,
+              segregación de roles, reglas de validación (campos vacíos o
+              duplicados), logs de auditoría, cifrado de la información y políticas
+              de respaldo gestionadas desde Colombia.
+            </li>
+          </ul>
+        </template>
+
+        <template id="alc-financiero">
+          <h3>Alcance Financiero y Administrativo</h3>
+          <p>Se revisó el flujo del dinero y la documentación de respaldo:</p>
+          <ul>
+            <li>
+              <strong>Pagos y Comisiones:</strong> modelo estricto de cobros y
+              pagos mediante transferencias bancarias (sin manejo de efectivo) y
+              comisiones fijas (ej. 3.5% para lotes pequeños).
+            </li>
+            <li>
+              <strong>Integración Contable:</strong> exportación de facturación
+              desde el <strong>Menú SIS</strong> hacia el software contable
+              <strong>CIESA</strong> (manejado en Colombia), que realiza la
+              vinculación y validación final con el <strong>SRI</strong> de Ecuador.
+            </li>
+          </ul>
+        </template>
+
+        <template id="alc-gobierno">
+          <h3>Alcance Estratégico y de Gobierno de Datos</h3>
+          <p>Nivel de madurez corporativa (metodología DCAM) en el manejo de la información:</p>
+          <ul>
+            <li>
+              <strong>Políticas y Calidad:</strong> inmutabilidad de los registros
+              (no se alteran tras la facturación), protocolos ante errores y
+              políticas estrictas de confidencialidad de compradores/vendedores.
+            </li>
+            <li>
+              <strong>Toma de Decisiones:</strong> indicadores semanales (volumen,
+              procedencia, número de asistentes) extraídos del Menú SIS por la
+              gerencia.
+            </li>
+            <li>
+              <strong>Brechas Estratégicas:</strong> necesidad de una
+              georreferenciación más exacta de las fincas de origen y falta de
+              intercambio formal de datos con entidades como Agrocalidad.
+            </li>
+          </ul>
+        </template>
+
+        <template id="alc-actores">
+          <h3>Alcance de Actores (Perspectiva 360°)</h3>
+          <p>El proceso se analizó incluyendo a toda la cadena de valor:</p>
+          <ul>
+            <li>
+              <strong>Gestión interna:</strong> gerencia, tecnología, finanzas,
+              área comercial y operativa.
+            </li>
+            <li>
+              <strong>Usuarios externos:</strong> ganaderos (experiencia desde la
+              finca, registro en el SIFAE y satisfacción con los pagos) y la visión
+              institucional de aliados como la Corporación de Ganaderos de Manabí
+              (Corpogam).
+            </li>
+          </ul>
+        </template>
+      </section>
+
+      <!-- Actores -->
+      <section>
+        <h2>Actores</h2>
+        <p style="font-size: 0.5em; margin-bottom: 0;">
+          Subastar actúa como <strong>puente comercial y financiero</strong>,
+          evitando el contacto directo entre las partes para garantizar seguridad
+          y transparencia. <em>Pasa el mouse para resaltar relaciones.</em>
+        </p>
+
+        <div class="actor-legend">
+          <span><i class="lg-ext"></i> Externos</span>
+          <span><i class="lg-int"></i> Internos (Subastar)</span>
+          <span><i class="lg-inst"></i> Institucionales / Aliados</span>
+        </div>
+
+        <div class="actor-graph" data-edges='[
+          ["vendedor","subastar"],
+          ["comprador","subastar"],
+          ["vendedor","agrocalidad"],
+          ["comprador","vendedor","anon"],
+          ["comercial","comprador"],
+          ["comercial","subastar"],
+          ["operativo","vendedor"],
+          ["operativo","martillero"],
+          ["martillero","comprador"],
+          ["financiero","comprador"],
+          ["financiero","vendedor"],
+          ["gerencia","subastar"],
+          ["corpogam","subastar"],
+          ["sri","financiero"]
+        ]'>
+
+          <div class="actor-node actor-node--hub" data-id="subastar" data-x="50" data-y="48">
+            <div class="actor-node__circle"><i class="fa-solid fa-building"></i></div>
+            <div class="actor-node__name">Subastar</div>
+            <div class="actor-node__detail">
+              <h4>Subastar</h4>
+              <p>Puente comercial y financiero entre las partes. Evita el contacto
+              directo para garantizar seguridad y transparencia.</p>
+            </div>
+          </div>
+
+          <!-- Institucionales -->
+          <div class="actor-node" data-id="corpogam" data-x="50" data-y="13" data-group="institucional">
+            <div class="actor-node__circle"><i class="fa-solid fa-handshake"></i></div>
+            <div class="actor-node__name">Corpogam</div>
+            <div class="actor-node__detail">
+              <h4>Corpogam</h4>
+              <p>Corporación de Ganaderos de Manabí. Socio estratégico con contrato
+              a 20 años: aporta el know-how local, los socios ganaderos y el espacio
+              físico (corrales y pista de juzgamiento).</p>
+            </div>
+          </div>
+
+          <div class="actor-node" data-id="agrocalidad" data-x="22" data-y="16" data-group="institucional">
+            <div class="actor-node__circle"><i class="fa-solid fa-file-shield"></i></div>
+            <div class="actor-node__name">Agrocalidad · SIFAE</div>
+            <div class="actor-node__detail">
+              <h4>Agrocalidad (Sistema SIFAE)</h4>
+              <p>Emite la Guía de Movilización que Subastar exige a los ganaderos
+              para permitir el ingreso de los animales.</p>
+            </div>
+          </div>
+
+          <div class="actor-node" data-id="sri" data-x="78" data-y="16" data-group="institucional">
+            <div class="actor-node__circle"><i class="fa-solid fa-landmark"></i></div>
+            <div class="actor-node__name">SRI · CIESA</div>
+            <div class="actor-node__detail">
+              <h4>SRI / CIESA</h4>
+              <p>La facturación local se enlaza con el contable colombiano (CIESA),
+              que valida la identidad de compradores y vendedores con el SRI de
+              Ecuador antes de emitir las facturas.</p>
+            </div>
+          </div>
+
+          <!-- Externos -->
+          <div class="actor-node" data-id="vendedor" data-x="12" data-y="44" data-group="externo">
+            <div class="actor-node__circle"><i class="fa-solid fa-cow"></i></div>
+            <div class="actor-node__name">Vendedor</div>
+            <div class="actor-node__detail">
+              <h4>Vendedor / Proveedor (Ganadero)</h4>
+              <p>Lleva los animales a la subasta. Obtiene la Guía de Movilización
+              (SIFAE), firma contrato de compraventa y puede declarar "autosubasta".
+              Cobra los lunes por transferencia, menos la comisión.</p>
+            </div>
+          </div>
+
+          <div class="actor-node" data-id="comprador" data-x="12" data-y="74" data-group="externo">
+            <div class="actor-node__circle"><i class="fa-solid fa-cart-shopping"></i></div>
+            <div class="actor-node__name">Comprador</div>
+            <div class="actor-node__detail">
+              <h4>Comprador</h4>
+              <p>Participa presencial o virtual buscando volumen y calidad. Recibe
+              pre-mercadeo. Tras ganar la puja paga de inmediato por transferencia
+              (sin efectivo) y tiene 24 h para movilizar los animales.</p>
+            </div>
+          </div>
+
+          <!-- Internos -->
+          <div class="actor-node" data-id="comercial" data-x="88" data-y="29" data-group="interno">
+            <div class="actor-node__circle"><i class="fa-solid fa-headset"></i></div>
+            <div class="actor-node__name">Director Comercial</div>
+            <div class="actor-node__detail">
+              <h4>Director Comercial</h4>
+              <p>Nexo inicial con el mercado: capta prospectos, los inscribe en el
+              sistema web y realiza el pre-mercadeo, llamando a los compradores para
+              asegurar la asistencia.</p>
+            </div>
+          </div>
+
+          <div class="actor-node" data-id="operativo" data-x="88" data-y="51" data-group="interno">
+            <div class="actor-node__circle"><i class="fa-solid fa-clipboard-check"></i></div>
+            <div class="actor-node__name">Director Operativo</div>
+            <div class="actor-node__detail">
+              <h4>Director Operativo</h4>
+              <p>Responsable físico y digital del ganado: recibe vendedores, verifica
+              las guías frente al sistema, arma los lotes y los ingresa al Módulo de
+              Pesaje. Une el mundo físico con el sistema central.</p>
+            </div>
+          </div>
+
+          <div class="actor-node" data-id="financiero" data-x="88" data-y="73" data-group="interno">
+            <div class="actor-node__circle"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+            <div class="actor-node__name">Analista Financiero</div>
+            <div class="actor-node__detail">
+              <h4>Analista Financiero / Facturación</h4>
+              <p>Emite las liquidaciones de compra y venta, exige el pago al comprador,
+              programa la transferencia al vendedor y aplica las comisiones (3.5% o 3%
+              según el tamaño del lote).</p>
+            </div>
+          </div>
+
+          <div class="actor-node" data-id="martillero" data-x="67" data-y="80" data-group="interno">
+            <div class="actor-node__circle"><i class="fa-solid fa-gavel"></i></div>
+            <div class="actor-node__name">Martillero</div>
+            <div class="actor-node__detail">
+              <h4>El Martillero</h4>
+              <p>Dirige la puja pública en la pista (Display). Relaciona la oferta (el
+              lote pesado) con la demanda; fija el precio base y los incrementos
+              rápidos (1–2 minutos por lote).</p>
+            </div>
+          </div>
+
+          <div class="actor-node" data-id="gerencia" data-x="33" data-y="80" data-group="interno">
+            <div class="actor-node__circle"><i class="fa-solid fa-user-shield"></i></div>
+            <div class="actor-node__name">Gerencia · TI (Colombia)</div>
+            <div class="actor-node__detail">
+              <h4>Gerencia General y TI (Colombia)</h4>
+              <p>Supervisan a los actores locales, administran la plataforma central
+              Menú SIS, auditan los datos ingresados en Ecuador y garantizan que, una
+              vez facturado un lote, la información sea inmutable.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <aside class="notes">
+          Recorrer los grupos: externos (vendedor/comprador, relación anónima),
+          equipo interno de Subastar y entidades institucionales (Corpogam,
+          Agrocalidad/SIFAE, SRI/CIESA).
+        </aside>
+      </section>
+
+      <!-- Proceso macro -->
+      <section>
+        <h2>Proceso macro</h2>
+        <p style="font-size: 0.55em;">
+          Ciclo estructurado que combina fases físicas de manejo de animales con
+          registros digitales; Subastar actúa como intermediario garantizando
+          transparencia y anonimato. 
+        </p>
+
+        <div class="route route--s">
+          <!-- Segmentos conectores (trazan la S) -->
+          <span class="route__seg route__seg--h1 fragment" data-fragment-index="1"></span>
+          <span class="route__seg route__seg--v1 fragment" data-fragment-index="2"></span>
+          <span class="route__seg route__seg--h2 fragment" data-fragment-index="3"></span>
+          <span class="route__seg route__seg--v2 fragment" data-fragment-index="4"></span>
+          <span class="route__seg route__seg--h3 fragment" data-fragment-index="5"></span>
+
+          <button class="route-step fragment" data-fragment-index="0" data-modal="pm-1">
+            <span class="route-step__circle">
+              <span class="route-step__num">-</span>
+              <i class="fa-solid fa-user-plus"></i>
+            </span>
+            <span class="route-step__title">Inscripción y Premercadeo</span>
+          </button>
+
+          <button class="route-step fragment" data-fragment-index="1" data-modal="pm-2">
+            <span class="route-step__circle">
+              <span class="route-step__num">1</span>
+              <i class="fa-solid fa-truck-ramp-box"></i>
+            </span>
+            <span class="route-step__title">Recepción y Verificación</span>
+          </button>
+
+          <button class="route-step fragment" data-fragment-index="2" data-modal="pm-3">
+            <span class="route-step__circle">
+              <span class="route-step__num">2</span>
+              <i class="fa-solid fa-weight-scale"></i>
+            </span>
+            <span class="route-step__title">Loteo y Pesaje</span>
+          </button>
+
+          <button class="route-step fragment" data-fragment-index="3" data-modal="pm-4">
+            <span class="route-step__circle">
+              <span class="route-step__num">3.a</span>
+              <i class="fa-solid fa-gavel"></i>
+            </span>
+            <span class="route-step__title">La Puja en Pista</span>
+          </button>
+
+          <button class="route-step fragment" data-fragment-index="4" data-modal="pm-5">
+            <span class="route-step__circle">
+              <span class="route-step__num">3.b</span>
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+            </span>
+            <span class="route-step__title">Liquidación y Facturación</span>
+          </button>
+
+          <button class="route-step fragment" data-fragment-index="5" data-modal="pm-6">
+            <span class="route-step__circle">
+              <span class="route-step__num">4</span>
+              <i class="fa-solid fa-money-bill-transfer"></i>
+            </span>
+            <span class="route-step__title">Pagos y Despacho</span>
+          </button>
+        </div>
+
+        <!-- Modales de cada fase -->
+        <template id="pm-1">
+          <h3>1 · Inscripción y Premercadeo</h3>
+          <p><em>Antes de la subasta.</em></p>
+          <ul>
+            <li>
+              <strong>Registro del cliente:</strong> al ganadero nuevo se le explica
+              el modelo, se solicitan sus datos (cédula, RUC, referencias) y se firma
+              un contrato de compraventa donde Subastar asume la responsabilidad
+              comercial.
+            </li>
+            <li>
+              <strong>Estrategia de atracción:</strong> se registra la intención de
+              volumen de ganado. Con ello, el director comercial realiza el
+              "premercadeo", contactando por teléfono a compradores específicos según
+              el tipo de ganado para asegurar asistencia y ofertas competitivas.
+            </li>
+          </ul>
+          <h3 style="font-size: 22px; margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--color-border, rgba(255,255,255,0.15));">
+            <i class="fa-solid fa-clipboard-list"></i> Datos que se registran en esta etapa
+          </h3>
+          <ul>
+            <li>
+              <strong>Datos personales y comerciales:</strong> labor comercial,
+              fecha de nacimiento, datos de contacto y correos electrónicos (para
+              envío de información y facturación).
+            </li>
+            <li>
+              <strong>Documentación legal:</strong> copia de la cédula de identidad,
+              el RUC (para fines de facturación) y el contrato de compraventa firmado.
+            </li>
+            <li>
+              <strong>Referencias:</strong> dos referencias comerciales de terceros,
+              incluyendo sus números telefónicos.
+            </li>
+          </ul>
+        </template>
+
+        <template id="pm-2">
+          <h3>2 · Recepción y Verificación Documental</h3>
+          <ul>
+            <li>
+              <strong>Requisito obligatorio:</strong> los animales llegan desde las
+              6:00 a.m. Para desembarcar, el ganadero debe entregar la
+              <strong>Guía de Movilización impresa del sistema estatal SIFAE
+              (Agrocalidad)</strong>. Sin ese documento, se rechaza el ingreso por
+              seguridad y legalidad.
+            </li>
+            <li>
+              <strong>Verificación:</strong> el Director Operativo contrasta
+              físicamente que los animales coincidan con las características y
+              cantidades de la guía.
+            </li>
+          </ul>
+          <h3 style="font-size: 22px; margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--color-border, rgba(255,255,255,0.15));">
+            <i class="fa-solid fa-clipboard-list"></i> Datos que se registran en esta etapa
+          </h3>
+          <ul>
+            <li>
+              <strong>Guía de Movilización (SIFAE):</strong> de la guía impresa
+              emitida por Agrocalidad se verifica la <strong>cantidad de animales,
+              la finca de origen y el tipo de animal</strong>.
+            </li>
+            <li>
+              <strong>Registro de corral:</strong> los vaqueros llevan un apunte
+              manual y básico (cantidad y tipo de animal por lote) para su propia
+              organización física; este dato <strong>no ingresa al sistema
+              tecnológico</strong>.
+            </li>
+          </ul>
+        </template>
+
+        <template id="pm-3">
+          <h3>3 · Loteo y Pesaje <span style="opacity:.7">(punto de no retorno)</span></h3>
+          <ul>
+            <li>
+              <strong>Agrupación:</strong> el proveedor arma "lotes" (unitarios o
+              grupales) buscando uniformidad de tamaño, peso y color para mejor
+              precio. A cada lote se le pinta un número identificativo.
+            </li>
+            <li>
+              <strong>Registro en el sistema:</strong> en la báscula, el Director
+              Operativo registra en el <strong>Módulo de Pesaje</strong> cantidad,
+              tipo, peso total, propietario y número de guía. Se imprime un ticket de
+              respaldo.
+            </li>
+            <li>
+              <strong>Inmutabilidad:</strong> una vez guardado el registro, los datos
+              del lote <strong>no pueden modificarse, borrarse ni reagruparse</strong>.
+            </li>
+          </ul>
+          <h3 style="font-size: 22px; margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--color-border, rgba(255,255,255,0.15));">
+            <i class="fa-solid fa-clipboard-list"></i> Datos que se registran en esta etapa
+          </h3>
+          <p style="font-size: 17px; opacity: .85;">
+            En el <strong>Módulo de Pesaje</strong> los datos se vuelven permanentes
+            y migran al sistema central (Menú SIS):
+          </p>
+          <ul>
+            <li><strong>Número de lote.</strong></li>
+            <li><strong>Cantidad de animales</strong> que conforman ese lote.</li>
+            <li><strong>Tipo de animal</strong> (por ejemplo, toro, vaca, ternero).</li>
+            <li><strong>Peso total del lote.</strong></li>
+            <li><strong>Nombre del propietario / proveedor.</strong></li>
+            <li><strong>Número de la guía de movilización del SIFAE</strong> con la que ingresaron.</li>
+          </ul>
+        </template>
+
+        <template id="pm-4">
+          <h3>4 · La Puja en Pista (la subasta)</h3>
+          <ul>
+            <li>
+              <strong>Dinámica rápida:</strong> desde las 2:00 p.m. los lotes ingresan
+              al escenario. El martillero fija precio base e incrementos, mostrados en
+              vivo en el <strong>Display</strong>. La venta dura 1–2 minutos por lote.
+            </li>
+            <li>
+              <strong>Autosubasta:</strong> si las pujas son bajas, el dueño puede
+              comprarse su propio lote. Si había ofertas previas paga 1% de comisión
+              por la gestión de pista; si "salió en base" (sin ofertas) no se le cobra
+              recargo y se lleva su animal.
+            </li>
+          </ul>
+          <h3 style="font-size: 22px; margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--color-border, rgba(255,255,255,0.15));">
+            <i class="fa-solid fa-clipboard-list"></i> Datos que se registran en esta etapa
+          </h3>
+          <p style="font-size: 17px; opacity: .85;">
+            El <strong>Display</strong> se conecta en tiempo real con el Menú SIS y
+            captura:
+          </p>
+          <ul>
+            <li><strong>Número de lote y peso</strong> (para visualización del público).</li>
+            <li><strong>Precio base o de arranque</strong> establecido por el martillero.</li>
+            <li>
+              <strong>Evolución de las pujas:</strong> el sistema guarda el historial
+              de cómo fue subiendo el precio en cada oferta.
+            </li>
+            <li>
+              <strong>Valor final de cierre</strong> e identidad del
+              <strong>comprador</strong> ganador (o si se declara en "autosubasta" por el dueño).
+            </li>
+          </ul>
+        </template>
+
+        <template id="pm-5">
+          <h3>5 · Liquidación y Facturación</h3>
+          <ul>
+            <li>
+              Al cerrarse la puja, el valor final migra automáticamente del Display al
+              sistema central <strong>Menú SIS</strong>.
+            </li>
+            <li>
+              La analista genera una <strong>Liquidación de Compra</strong> (comprador)
+              y una <strong>Liquidación de Venta</strong> (proveedor).
+            </li>
+            <li>
+              <strong>Comisiones al vendedor:</strong> 3.5% si el lote es de 1 a 4
+              animales, y 3% si es de 5 o más.
+            </li>
+            <li>
+              <strong>Confidencialidad:</strong> ningún documento cruza nombres — el
+              vendedor no sabe quién compró y el comprador no sabe de quién era,
+              previniendo extorsiones o riesgos de seguridad.
+            </li>
+          </ul>
+          <h3 style="font-size: 22px; margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--color-border, rgba(255,255,255,0.15));">
+            <i class="fa-solid fa-clipboard-list"></i> Datos que se registran en esta etapa
+          </h3>
+          <ul>
+            <li>
+              <strong>Datos del evento:</strong> número de evento, fecha y sede.
+            </li>
+            <li>
+              <strong>Datos de la transacción:</strong> nombre del cliente, número de
+              lote adquirido/vendido, peso exacto, costo pagado por kilo y valor total
+              de la transacción.
+            </li>
+            <li>
+              <strong>Descuentos y comisiones:</strong> porcentaje de comisión cobrado
+              por Subastar (3.5% para lotes pequeños o 3% para lotes de 5 o más
+              animales) más el respectivo IVA por el servicio de comercialización.
+            </li>
+          </ul>
+        </template>
+
+        <template id="pm-6">
+          <h3>6 · Pagos y Despacho <span style="opacity:.7">(cierre del ciclo)</span></h3>
+          <ul>
+            <li>
+              <strong>Cobro inmediato:</strong> el comprador paga el total el mismo día,
+              exclusivamente por <strong>transferencia bancaria</strong> (no se acepta
+              efectivo).
+            </li>
+            <li>
+              <strong>Despacho:</strong> el comprador asume el flete y tiene hasta 24 h
+              (el viernes) para retirar los animales; si excede, se cobra un excedente
+              por mantenimiento. Para salir se emite una nueva guía cuyo punto de
+              partida es Subastar.
+            </li>
+            <li>
+              <strong>Pago al vendedor:</strong> tras recaudar de los compradores,
+              Subastar transfiere las ganancias a los vendedores el lunes de la
+              semana siguiente.
+            </li>
+          </ul>
+          <h3 style="font-size: 22px; margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--color-border, rgba(255,255,255,0.15));">
+            <i class="fa-solid fa-clipboard-list"></i> Datos que se registran en esta etapa
+          </h3>
+          <ul>
+            <li>
+              <strong>Datos bancarios:</strong> todo se maneja por transferencias.
+              Para pagar al proveedor se registra su número de cuenta; si el dinero va
+              dirigido a una persona distinta, se registra un documento físico de
+              <strong>"firma a terceros"</strong> autorizando la transacción.
+            </li>
+            <li>
+              <strong>Guía de Movilización de salida:</strong> para retirar los
+              animales se genera una nueva guía en el sistema estatal SIFAE,
+              registrando a <strong>Subastar como punto de origen</strong>, el nuevo
+              destino, la placa del vehículo de transporte y el número de cédula del
+              chofer responsable.
+            </li>
+          </ul>
+        </template>
+      </section>
+
+      <!-- Proceso macro · Información que entrega el proveedor -->
+      <section>
+        <h2>Información que entrega el proveedor</h2>
+        <p style="font-size: 0.58em;">
+          Para participar como <strong>vendedor</strong>, el ganadero entrega
+          información en <strong>dos momentos</strong>: al registrarse como cliente
+          nuevo y el día que ingresa los animales a las instalaciones.
+        </p>
+
+        <div class="cards-grid">
+          <button class="info-card fragment" data-modal="prov-registro">
+            <span class="info-card__icon"><i class="fa-solid fa-id-card"></i></span>
+            <h3>1 · Registro inicial</h3>
+            <p>Inscripción como cliente: datos, documentos legales y contrato.</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+
+          <button class="info-card fragment" data-modal="prov-ingreso">
+            <span class="info-card__icon"><i class="fa-solid fa-truck-ramp-box"></i></span>
+            <h3>2 · Ingreso del ganado</h3>
+            <p>Por cada subasta: guía SIFAE e información para el loteo.</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+        </div>
+
+        <p class="fragment" style="font-size: 0.5em; color: var(--color-text-muted);">
+          Aparte de la guía de movilización y las características de los lotes,
+          Subastar <strong>no exige</strong> documentos adicionales sobre genética
+          ni registros sanitarios específicos del animal al momento de la recepción.
+        </p>
+
+        <!-- Contenido de los modales -->
+        <template id="prov-registro">
+          <h3>1 · Registro inicial (Inscripción como cliente)</h3>
+          <p>
+            Cuando el ganadero se acerca por primera vez, el equipo comercial le
+            solicita llenar un formulario para ingresarlo a la base de datos. La
+            información y documentos exigidos son:
+          </p>
+          <ul>
+            <li>
+              <strong>Datos personales y comerciales:</strong> fecha de nacimiento,
+              labor comercial y datos de contacto, incluyendo correos electrónicos
+              para el envío de información y los procesos de facturación.
+            </li>
+            <li>
+              <strong>Documentación legal y tributaria:</strong> copia o foto de la
+              <strong>cédula de identidad</strong> y el <strong>RUC</strong>, ya que
+              es indispensable que el ganadero facture la venta a los compradores.
+            </li>
+            <li>
+              <strong>Referencias comerciales:</strong> dos referencias de terceros
+              (con sus números telefónicos) como contacto adicional.
+            </li>
+            <li>
+              <strong>Contrato de compraventa firmado:</strong> autoriza a Subastar
+              a actuar como intermediario y estipula las cláusulas de
+              responsabilidad sobre los animales una vez que ingresan a los corrales.
+            </li>
+          </ul>
+        </template>
+
+        <template id="prov-ingreso">
+          <h3>2 · Ingreso del ganado (para cada subasta)</h3>
+          <p>
+            Cuando el ganadero traslada a sus bovinos a las instalaciones para
+            participar en un evento, debe entregar la siguiente información de los
+            animales:
+          </p>
+          <ul>
+            <li>
+              <strong>Guía de Movilización (SIFAE):</strong> el requisito más
+              estricto y obligatorio. Debe entregar la guía oficial emitida por
+              <strong>Agrocalidad en formato impreso (físico)</strong>. Si un animal
+              llega sin esta guía, se rechaza su ingreso de forma inmediata por
+              motivos de seguridad (evitar el abigeato) y legalidad.
+            </li>
+            <li>
+              <strong>Información para el loteo:</strong> comunica la cantidad total
+              de animales y el tipo (vacas, toros, vaconas, etc.) y entrega la
+              directriz final de <strong>cómo se agruparán los animales para
+              conformar los lotes</strong> (individuales o grupos uniformes) antes
+              de pasar a la báscula para ser pesados.
+            </li>
+          </ul>
+        </template>
+      </section>
+
+      <!-- Bizagi -->
+      <section>
+        <h2>Bizagi</h2>
+        <p>Diagrama del proceso modelado en Bizagi.</p>
+        <aside class="notes">Insertar aquí la imagen o el diagrama exportado de Bizagi.</aside>
+      </section>
+
+      <!-- Entradas y salidas -->
+      <section>
+        <h2>Entradas y salidas</h2>
+        <p style="font-size: 0.5em; margin: 0 0 14px;">
+          El proceso combina flujos <strong>físicos</strong>,
+          <strong>documentales</strong> y <strong>de datos</strong>: a la izquierda
+          lo que ingresa; a la derecha los resultados y entregables.
+        </p>
+
+        <div class="io-grid">
+          <!-- Entradas -->
+          <div class="io-col io-col--in">
+            <h3 class="io-col__head">
+              <i class="fa-solid fa-arrow-right-to-bracket"></i> Entradas <span>(Inputs)</span>
+            </h3>
+            <ul class="io-list">
+              <li>
+                <strong>Ingresos físicos:</strong> los animales (bovinos) que los
+                proveedores trasladan a los corrales de Subastar.
+              </li>
+              <li>
+                <strong>Datos y documentación legal:</strong> datos personales y de
+                contacto, cédula, RUC (obligatorio para facturar), referencias
+                comerciales y Contrato de Compraventa firmado.
+              </li>
+              <li>
+                <strong>Guía de Movilización (SIFAE):</strong> documento estatal
+                impreso obligatorio; valida origen, cantidad y tipo de animal. Sin
+                él se rechaza el ingreso.
+              </li>
+              <li>
+                <strong>Criterios de loteo y peso:</strong> directrices del ganadero
+                para agrupar los lotes, más el peso exacto que arroja la báscula.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Salidas -->
+          <div class="io-col io-col--out">
+            <h3 class="io-col__head">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i> Salidas <span>(Outputs)</span>
+            </h3>
+            <ul class="io-list">
+              <li>
+                <strong>Salidas físicas:</strong> despacho de los animales al
+                comprador, que asume el flete y transporte hasta su destino.
+              </li>
+              <li>
+                <strong>Ticket de respaldo:</strong> comprobante físico al vendedor
+                tras el pesaje (lote, datos, cantidad y peso total).
+              </li>
+              <li>
+                <strong>Liquidaciones:</strong> de <em>Compra</em> (lote, peso,
+                costo por kilo y total) y de <em>Venta</em> (valor subastado menos
+                comisión de 3.5% / 3% e IVA).
+              </li>
+              <li>
+                <strong>Nueva Guía de Movilización (SIFAE):</strong> emitida para el
+                comprador, con Subastar como punto de origen.
+              </li>
+              <li>
+                <strong>Flujo financiero:</strong> cobro inmediato por transferencia
+                (sin efectivo) y pago posterior a las cuentas de los vendedores.
+              </li>
+              <li>
+                <strong>Reportes e indicadores:</strong> tablero semanal del Menú SIS
+                (volúmenes, procedencia, autosubastas y asistencia).
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Conclusiones -->
+      <section>
+        <h2>Conclusiones · Hallazgos clave</h2>
+        <p style="font-size: 0.55em;">
+          El análisis integral del proceso de subastas abarca dimensiones
+          <strong>comerciales, operativas, tecnológicas y de gobernanza de
+          datos</strong>. Cinco grupos de hallazgos resumen lo más relevante.
+        </p>
+
+        <div class="cards-grid">
+          <button class="info-card" data-modal="hz-cultura">
+            <span class="info-card__icon"><i class="fa-solid fa-landmark"></i></span>
+            <h3>1 · Brechas culturales y tributarias</h3>
+            <p>Miedo al SRI y desinformación de intermediarios informales.</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+
+          <button class="info-card" data-modal="hz-logistica">
+            <span class="info-card__icon"><i class="fa-solid fa-truck-fast"></i></span>
+            <h3>2 · Logística y competitividad</h3>
+            <p>Altos fletes y fuga de volumen hacia otras provincias.</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+
+          <button class="info-card" data-modal="hz-financiera">
+            <span class="info-card__icon"><i class="fa-solid fa-comment-dollar"></i></span>
+            <h3>3 · Percepción financiera</h3>
+            <p>Descuentos percibidos como confusos y fallas en la entrega física.</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+
+          <button class="info-card" data-modal="hz-tecnologia">
+            <span class="info-card__icon"><i class="fa-solid fa-microchip"></i></span>
+            <h3>4 · Tecnología y trazabilidad</h3>
+            <p>Sin API estatal, trazabilidad por lote y sin georreferenciación.</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+
+          <button class="info-card" data-modal="hz-gobernanza">
+            <span class="info-card__icon"><i class="fa-solid fa-database"></i></span>
+            <h3>5 · Centralización y gobernanza</h3>
+            <p>Datos inmutables y centralizados, pero gobernanza en Nivel 1.</p>
+            <span class="info-card__more">Ver detalle <i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+        </div>
+
+        <!-- Contenido de los modales -->
+        <template id="hz-cultura">
+          <h3>1 · Brechas culturales y resistencia a la formalización</h3>
+          <ul>
+            <li>
+              <strong>Miedo al SRI:</strong> la falta de cultura tributaria y el
+              temor a facturar dificultan atraer a más ganaderos. Muchos creen
+              erróneamente que el SRI les quitará gran parte de su dinero, pese a
+              que la actividad ganadera no genera IVA.
+            </li>
+            <li>
+              <strong>Desinformación de intermediarios:</strong> los comerciantes
+              informales aprovechan ese miedo tributario para desinformar a los
+              productores en sus fincas, convenciéndolos de venderles el ganado
+              directamente a precios más bajos y evitando la subasta.
+            </li>
+          </ul>
+        </template>
+
+        <template id="hz-logistica">
+          <h3>2 · Limitaciones logísticas y competitividad</h3>
+          <ul>
+            <li>
+              <strong>Altos costos de transporte (fletes):</strong> movilizar los
+              animales hasta los corrales es una barrera importante para los
+              pequeños productores, ya que el camión cuesta lo mismo por una res
+              que por diez.
+            </li>
+            <li>
+              <strong>Fuga de volumen hacia otras provincias:</strong> gran parte
+              del ganado de Chone es comprado por intermediarios que lo llevan a
+              ferias más grandes (p. ej. Santo Domingo), limitando el volumen que
+              ingresa a Subastar y, por ende, a menos compradores mayoristas.
+            </li>
+          </ul>
+        </template>
+
+        <template id="hz-financiera">
+          <h3>3 · Inconformidad y percepción financiera</h3>
+          <ul>
+            <li>
+              <strong>Falta de claridad en los descuentos:</strong> pese a la
+              comisión fija (3.5% para lotes de 1 a 4 animales y 3% para lotes de 5
+              o más), hay quejas recurrentes —respaldadas por Corpogam— de que los
+              descuentos en las liquidaciones son confusos o mayores a lo esperado,
+              lo que ha mermado la participación de algunos socios.
+            </li>
+            <li>
+              <strong>Problemas en la entrega física:</strong> se han reportado
+              casos aislados de desorganización en que los animales comprados se
+              mezclaron y despacharon por error en camiones equivocados.
+            </li>
+          </ul>
+        </template>
+
+        <template id="hz-tecnologia">
+          <h3>4 · Arquitectura tecnológica y trazabilidad incompleta</h3>
+          <ul>
+            <li>
+              <strong>Dependencia del documento físico (SIFAE):</strong> el ingreso
+              depende de la guía física de Agrocalidad; no existe intercambio de
+              datos automático (vía API) entre Subastar y las entidades
+              gubernamentales.
+            </li>
+            <li>
+              <strong>Trazabilidad por lote, no individual:</strong> el sistema no
+              rastrea a los animales individualmente (chips o aretes) sino por
+              "lotes". Si un animal ya subastado regresa con un nuevo dueño, se crea
+              un registro nuevo sin su historia clínica o transaccional.
+            </li>
+            <li>
+              <strong>Falta de georreferenciación exacta:</strong> no se puede
+              ubicar la finca específica de origen del ganado; solo se guían por el
+              cantón general declarado en la guía.
+            </li>
+          </ul>
+        </template>
+
+        <template id="hz-gobernanza">
+          <h3>5 · Centralización, inmutabilidad y gobernanza de datos</h3>
+          <ul>
+            <li>
+              <strong>Punto de no retorno (inmutabilidad):</strong> una vez
+              registrado el peso y el número de lote en la báscula, la información
+              se vuelve inmutable; no puede modificarse, editarse ni borrarse a
+              nivel local.
+            </li>
+            <li>
+              <strong>Cero registros paralelos:</strong> toda la información
+              converge obligatoriamente en el "Menú SIS"; no hay bases paralelas en
+              Excel u otros formatos locales, salvo apuntes manuales básicos de los
+              vaqueros en los corrales.
+            </li>
+            <li>
+              <strong>Gobierno de datos en Nivel 1 (Conceptual):</strong> pese a la
+              robustez del software, la evaluación DCAM revela que no existe un
+              programa de gobernanza formalizado: sin roles documentados, glosarios
+              centralizados ni hoja de ruta estratégica de datos.
+            </li>
+            <li>
+              <strong>Fuerte política de confidencialidad:</strong> para mitigar
+              extorsiones, el sistema protege la identidad de los clientes: el
+              vendedor nunca sabe a quién vendió su lote y el comprador desconoce su
+              origen.
+            </li>
+          </ul>
+        </template>
+      </section>
+
+      <!-- Recomendaciones -->
+      <section>
+        <h2>Recomendaciones</h2>
+        <ol>
+          <li>Recomendación 1</li>
+          <li>Recomendación 2</li>
+          <li>Recomendación 3</li>
+        </ol>
+      </section>
+    </div>
+  </div>
+  <div class="footer">GIZ · Procesos</div>
+  <script type="module" src="/src/init.js"></script>
+</body>
+</html>

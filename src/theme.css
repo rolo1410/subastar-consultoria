@@ -1,0 +1,153 @@
+/* Estilos compartidos para las presentaciones GIZ
+   La paleta vive en palette.css (variables --color-*). */
+
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.reveal {
+  font-family: 'Elms Sans', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-optical-sizing: auto;
+  color: var(--color-text);
+}
+
+.reveal-viewport {
+  background: var(--color-bg);
+}
+
+/* El contenido arranca debajo del header, un poco más arriba que el centro */
+.reveal .slides > section,
+.reveal .slides > section > section {
+  padding-top: 64px;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  text-transform: none;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.reveal h1 { color: var(--color-accent); }
+
+/* El título del slide (h2) se muestra en el header superior; se oculta del
+   cuerpo para no duplicarlo, pero permanece en el HTML como fuente del header. */
+.reveal .slides > section > h2,
+.reveal .slides > section > section > h2 {
+  display: none;
+}
+
+.reveal a {
+  color: var(--color-link);
+}
+
+.reveal ::selection {
+  background: var(--color-accent);
+  color: var(--ink-black);
+}
+
+.reveal .slide-tag {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  border-radius: 999px;
+  font-size: 0.5em;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--color-accent);
+  color: var(--ink-black);
+  margin-bottom: 0.5em;
+}
+
+.reveal .controls {
+  color: var(--color-accent);
+}
+
+.reveal .progress {
+  color: var(--color-accent);
+}
+
+.reveal .footer {
+  position: fixed;
+  bottom: 12px;
+  left: 20px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+/* Logos en la portada de las presentaciones */
+.reveal .cover-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 40px;
+}
+
+.reveal .cover-logos .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  padding: 0 16px;
+  background: #ffffff;
+  border-radius: 12px;
+}
+
+.reveal .cover-logos .logo img {
+  height: 36px; /* más pequeños; todos del mismo tamaño (misma altura) */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* --- Entradas y salidas (dos columnas) ---------------------------------- */
+.reveal .io-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-top: 8px;
+}
+
+.reveal .io-col {
+  background: var(--color-surface, #001d3d);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.12));
+  border-radius: 16px;
+  padding: 18px 22px 20px;
+}
+
+.reveal .io-col--in { border-top: 4px solid var(--color-accent, #ffc300); }
+.reveal .io-col--out { border-top: 4px solid #4ea1ff; }
+
+.reveal .io-col__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 10px;
+  font-size: 0.72em;
+  color: var(--color-accent, #ffc300);
+}
+
+.reveal .io-col--out .io-col__head { color: #4ea1ff; }
+
+.reveal .io-col__head span {
+  font-size: 0.6em;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.reveal .io-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.reveal .io-list li {
+  font-size: 0.46em;
+  line-height: 1.45;
+  margin: 7px 0;
+  color: var(--color-text, #fff);
+}
+
+.reveal .io-list strong { color: var(--color-accent-2, #ffd60a); }
+.reveal .io-col--out .io-list strong { color: #8fc6ff; }

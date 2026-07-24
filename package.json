@@ -1,0 +1,26 @@
+{
+  "name": "giz_presentaciones",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Presentaciones GIZ con reveal.js (procesos, gobierno, recomendaciones)",
+  "scripts": {
+    "dev": "vite",
+    "start:dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "reveal.js",
+    "presentaciones",
+    "giz"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.3.1",
+    "reveal.js": "^6.0.1"
+  },
+  "devDependencies": {
+    "vite": "^8.1.5"
+  }
+}

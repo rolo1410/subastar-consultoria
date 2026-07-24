@@ -1,0 +1,24 @@
+/* ==========================================================================
+   Paleta de colores centralizada — Presentaciones GIZ
+   Fuente única de verdad para el color en todo el proyecto.
+   ========================================================================== */
+:root {
+  /* --- Colores base de la paleta --- */
+  --ink-black: #000814;
+  --prussian-blue: #001d3d;
+  --regal-navy: #003566;
+  --school-bus-yellow: #ffc300;
+  --gold: #ffd60a;
+
+  /* --- Tokens semánticos (usar estos en los componentes) --- */
+  --color-bg: var(--ink-black);
+  --color-surface: var(--prussian-blue);
+  --color-surface-2: var(--regal-navy);
+  --color-text: #ffffff;
+  --color-text-muted: rgba(255, 255, 255, 0.6);
+  --color-accent: var(--school-bus-yellow);
+  --color-accent-2: var(--gold);
+  --color-heading: #ffffff;
+  --color-link: var(--gold);
+  --color-border: rgba(255, 255, 255, 0.12);
+}

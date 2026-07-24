@@ -1,0 +1,178 @@
+/* Tarjetas informativas + modales — usa la paleta centralizada */
+
+/* --- Grid de tarjetas ---------------------------------------------------- */
+.reveal .cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+  margin: 24px 0 18px;
+}
+
+.reveal .info-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  text-align: left;
+  padding: 22px 20px;
+  border-radius: 16px;
+  background: var(--color-surface, #001d3d);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.12));
+  color: var(--color-text, #fff);
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.reveal .info-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent, #ffc300);
+  background: var(--color-surface-2, #003566);
+}
+
+.reveal .info-card__icon {
+  font-size: 1.7em;
+  line-height: 1;
+  color: var(--color-accent, #ffc300);
+}
+
+.reveal .info-card h3 {
+  margin: 0;
+  font-size: 0.72em;
+  color: var(--color-accent, #ffc300);
+}
+
+.reveal .info-card p {
+  margin: 0;
+  font-size: 0.5em;
+  color: var(--color-text-muted, rgba(255, 255, 255, 0.7));
+  line-height: 1.4;
+}
+
+.reveal .info-card__more {
+  margin-top: auto;
+  font-size: 0.46em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-accent, #ffc300);
+}
+
+/* --- Overlay + modal ----------------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 3vh 3vw;
+  background: rgba(0, 8, 20, 0.75);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.modal-overlay.is-open {
+  display: flex;
+  opacity: 1;
+  animation: modal-overlay-in 0.25s ease forwards;
+}
+
+/* Con un modal abierto, el puntero debe ser visible para poder cerrarlo:
+   se anula el cursor oculto del láser y se esconde el punto láser. */
+body.modal-open,
+body.modal-open .reveal-viewport,
+body.modal-open .reveal-viewport * {
+  cursor: auto !important;
+}
+body.modal-open .laser-dot {
+  display: none !important;
+}
+
+.modal {
+  position: relative;
+  width: min(1040px, 94vw);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 52px 60px;
+  border-radius: 22px;
+  background: var(--color-surface, #001d3d);
+  border: 1px solid var(--color-border, rgba(255, 255, 255, 0.15));
+  border-top: 5px solid var(--color-accent, #ffc300);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  color: var(--color-text, #fff);
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.modal-overlay.is-open .modal {
+  animation: modal-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modal-overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: 14px;
+  left: 18px;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text-muted, rgba(255, 255, 255, 0.6));
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.modal__close:hover {
+  background: var(--color-accent, #ffc300);
+  color: var(--ink-black, #000814);
+}
+
+.modal__body h3 {
+  margin: 0 0 12px;
+  font-size: 30px;
+  color: var(--color-accent, #ffc300);
+}
+
+.modal__body p {
+  font-size: 19px;
+  line-height: 1.65;
+  color: var(--color-text, #fff);
+}
+
+.modal__body ul {
+  margin: 16px 0;
+  padding-left: 24px;
+}
+
+.modal__body li {
+  font-size: 18px;
+  line-height: 1.65;
+  margin: 10px 0;
+}
+
+.modal__body ul ul {
+  margin: 6px 0;
+}
+
+.modal__body strong {
+  color: var(--color-accent-2, #ffd60a);
+}

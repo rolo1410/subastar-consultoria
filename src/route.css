@@ -1,0 +1,122 @@
+/* Ruta de proceso en forma de S (serpentina) — usa la paleta centralizada
+   Recorrido: inferior-izquierda → superior-derecha
+     5 ───▶ 6      (arriba, izq→der)
+     ▲
+     4 ◀── 3       (media, der→izq)
+          ▲
+     1 ───▶ 2      (abajo, izq→der)
+*/
+
+.reveal .route {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 900 / 430;
+  margin: 30px auto 0;
+}
+
+/* --- Segmentos conectores (trazan la S) --------------------------------- */
+.reveal .route__seg {
+  position: absolute;
+  z-index: 0;
+  border-radius: 3px;
+  background: linear-gradient(
+    to right,
+    var(--color-accent, #ffc300),
+    var(--color-accent-2, #ffd60a)
+  );
+  opacity: 0.45;
+}
+
+/* Coordenadas de referencia: columnas 22% / 78% · filas 20% / 50% / 80% */
+.reveal .route__seg--h1 { left: 22%; width: 56%; top: calc(80% - 2.5px); height: 5px; }  /* abajo   1→2 */
+.reveal .route__seg--v1 { top: 50%; height: 30%; left: calc(78% - 2.5px); width: 5px; }  /* sube    2→3 */
+.reveal .route__seg--h2 { left: 22%; width: 56%; top: calc(50% - 2.5px); height: 5px; }  /* media   3→4 */
+.reveal .route__seg--v2 { top: 20%; height: 30%; left: calc(22% - 2.5px); width: 5px; }  /* sube    4→5 */
+.reveal .route__seg--h3 { left: 22%; width: 56%; top: calc(20% - 2.5px); height: 5px; }  /* arriba  5→6 */
+
+/* --- Nodos -------------------------------------------------------------- */
+.reveal .route-step {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 160px;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--color-text, #fff);
+  font-family: inherit;
+  cursor: pointer;
+  transform: translate(-50%, -32px);
+}
+
+/* Posición de cada nodo (centro del círculo en la coordenada indicada) */
+.reveal .route-step:nth-of-type(1) { left: 22%; top: 80%; } /* inferior-izquierda */
+.reveal .route-step:nth-of-type(2) { left: 78%; top: 80%; }
+.reveal .route-step:nth-of-type(3) { left: 78%; top: 50%; }
+.reveal .route-step:nth-of-type(4) { left: 22%; top: 50%; }
+.reveal .route-step:nth-of-type(5) { left: 22%; top: 20%; }
+.reveal .route-step:nth-of-type(6) { left: 78%; top: 20%; } /* superior-derecha */
+
+.reveal .route-step__circle {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--color-accent, #ffc300);
+  background: var(--color-surface, #001d3d);
+  border: 3px solid var(--color-accent, #ffc300);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease,
+    color 0.18s ease;
+}
+
+.reveal .route-step:hover .route-step__circle {
+  transform: translateY(-4px) scale(1.08);
+  background: var(--color-accent, #ffc300);
+  color: var(--ink-black, #000814);
+  box-shadow: 0 0 0 7px rgba(255, 195, 0, 0.16);
+}
+
+.reveal .route-step__num {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-black, #000814);
+  background: var(--color-accent-2, #ffd60a);
+  border: 2px solid var(--color-surface, #001d3d);
+}
+
+.reveal .route-step__title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  max-width: 150px;
+}
+
+.reveal .route-step__more {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-text-muted, rgba(255, 255, 255, 0.6));
+}
+
+.reveal .route-step:hover .route-step__more {
+  color: var(--color-accent, #ffc300);
+}

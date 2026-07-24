@@ -1,0 +1,16 @@
+/* Magnificar texto bajo el cursor al mantener Ctrl
+   Se aumenta el font-size real (no transform) para que el texto reacomode
+   y salte de línea dentro del slide en lugar de salirse de los bordes. */
+
+.magnify-target {
+  transition: font-size 0.12s ease;
+  position: relative;
+  z-index: 20;
+  /* Permitir que el texto ampliado se ajuste y parta líneas */
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
+  /* Centrar el texto ampliado */
+  text-align: center;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Presentaciones GIZ</title>
+  <link rel="stylesheet" href="./src/palette.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--color-accent); }
+    p.sub { color: var(--color-text-muted); margin-bottom: 2.5rem; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; max-width: 820px; width: 100%; }
+    .card {
+      display: block;
+      text-decoration: none;
+      color: var(--color-text);
+      background: var(--color-surface);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      padding: 1.75rem;
+      transition: transform 0.15s, border-color 0.15s, background 0.15s;
+    }
+    .card:hover { transform: translateY(-4px); border-color: var(--color-accent); background: var(--color-surface-2); }
+    .card h2 { font-size: 1.4rem; margin-bottom: 0.4rem; }
+    .card span { color: var(--color-text-muted); font-size: 0.9rem; }
+    .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--color-accent); margin-right: 8px; }
+
+    /* Logos (parte inferior) */
+    .logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 101px;     /* 45% más grande */
+      padding: 0 1.8rem;
+      background: #ffffff;
+      border-radius: 18px;
+    }
+    .logo img {
+      height: 64px;      /* 45% más grande — todos del mismo tamaño (misma altura) */
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>Presentaciones GIZ</h1>
+  <p class="sub">Selecciona una presentación</p>
+  <div class="cards">
+    <a class="card" href="./presentaciones/procesos/">
+      <h2><span class="dot"></span>Procesos</h2>
+      <span>Diagnóstico y optimización de procesos</span>
+    </a>
+    <a class="card" href="./presentaciones/gobierno/">
+      <h2><span class="dot"></span>Gobierno</h2>
+      <span>Estructura de gobernanza</span>
+    </a>
+    <a class="card" href="./presentaciones/recomendaciones/">
+      <h2><span class="dot"></span>Recomendaciones</h2>
+      <span>Conclusiones y próximos pasos</span>
+    </a>
+  </div>
+
+  <div class="logos">
+    <span class="logo"><img src="presentaciones/assets/images/giz.png" alt="GIZ" /></span>
+    <span class="logo"><img src="presentaciones/assets/images/sifae.png" alt="SIFAE" /></span>
+    <span class="logo"><img src="presentaciones/assets/images/subastar.png" alt="Subastar" /></span>
+  </div>
+</body>
+</html>

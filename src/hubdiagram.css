@@ -1,0 +1,79 @@
+/* Diagrama hub (relación radial de tarjetas) — usa la paleta centralizada */
+
+.reveal .hub-diagram {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  margin-top: 8px;
+}
+
+.reveal .hub-diagram__lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.reveal .hub-line {
+  stroke: var(--color-accent, #ffc300);
+  stroke-width: 2;
+  stroke-dasharray: 6 6;
+  opacity: 0.7;
+}
+
+.reveal .hub-line__dot {
+  fill: var(--color-accent, #ffc300);
+}
+
+/* Nodo central */
+.reveal .hub {
+  position: absolute;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  width: 168px;
+  height: 168px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  padding: 16px;
+  border-radius: 50%;
+  background: var(--color-accent, #ffc300);
+  color: var(--ink-black, #000814);
+  box-shadow: 0 0 0 8px rgba(255, 195, 0, 0.18);
+}
+
+.reveal .hub__icon {
+  font-size: 1.6em;
+  line-height: 1;
+}
+
+.reveal .hub__title {
+  font-size: 0.42em;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* Tarjetas posicionadas de forma absoluta alrededor del centro */
+.reveal .hub-diagram .info-card {
+  position: absolute;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  width: 232px;
+  margin: 0;
+  padding: 16px 16px;
+}
+
+.reveal .hub-diagram .info-card h3 {
+  font-size: 0.6em;
+}
+
+.reveal .hub-diagram .info-card p {
+  font-size: 0.42em;
+}
+
+.reveal .hub-diagram .info-card__more {
+  font-size: 0.4em;
+}
