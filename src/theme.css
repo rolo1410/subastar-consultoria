@@ -115,6 +115,28 @@
   border: 1px solid var(--color-border, rgba(255, 255, 255, 0.12));
   border-radius: 16px;
   padding: 18px 22px 20px;
+  max-height: 62vh;
+  overflow-y: auto;
+}
+
+/* Encabezado fijo mientras se hace scroll en la columna */
+.reveal .io-col__head {
+  position: sticky;
+  top: 0;
+  background: var(--color-surface, #001d3d);
+  padding-bottom: 8px;
+  z-index: 1;
+}
+
+/* Barra de desplazamiento discreta */
+.reveal .io-col::-webkit-scrollbar { width: 8px; }
+.reveal .io-col::-webkit-scrollbar-track { background: transparent; }
+.reveal .io-col::-webkit-scrollbar-thumb {
+  background: var(--color-border, rgba(255, 255, 255, 0.25));
+  border-radius: 4px;
+}
+.reveal .io-col::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent, #ffc300);
 }
 
 .reveal .io-col--in { border-top: 4px solid var(--color-accent, #ffc300); }

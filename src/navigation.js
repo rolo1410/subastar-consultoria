@@ -94,6 +94,14 @@ export default function setupNavigation(deck) {
   nav.appendChild(fsBtn);
   document.body.appendChild(nav);
 
+  // --- Botón "Menú principal" (solo en la última diapositiva) --------------
+  const homeBtn = document.createElement('a');
+  homeBtn.className = 'deck-home';
+  homeBtn.href = '../../'; // sube de /presentaciones/<nombre>/ a la raíz
+  homeBtn.innerHTML =
+    '<i class="fa-solid fa-table-cells-large"></i><span>Menú principal</span>';
+  document.body.appendChild(homeBtn);
+
   // Lista plana de todas las diapositivas (incluye verticales, si las hubiera)
   function getSlides() {
     return Array.from(deck.getSlides());
@@ -106,6 +114,8 @@ export default function setupNavigation(deck) {
     slider.max = String(Math.max(0, total - 1));
     slider.value = String(current);
     counter.textContent = `${current + 1} / ${total}`;
+    // El botón "Menú principal" solo aparece en la última diapositiva
+    homeBtn.classList.toggle('is-visible', current === total - 1);
   }
 
   // Navegar al mover el slider

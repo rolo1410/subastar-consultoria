@@ -80,14 +80,26 @@
 }
 
 /* Con un modal abierto, el puntero debe ser visible para poder cerrarlo:
-   se anula el cursor oculto del láser y se esconde el punto láser. */
+   se anula el cursor oculto del láser y se esconde el punto láser.
+   Nota: Reveal aplica .reveal-viewport al propio <body>, por lo que la
+   corrección debe apuntar a ese mismo elemento (y superar en especificidad
+   a `.reveal-viewport.laser-active *`). */
 body.modal-open,
-body.modal-open .reveal-viewport,
-body.modal-open .reveal-viewport * {
+body.modal-open.laser-active,
+body.modal-open *,
+body.modal-open.laser-active *,
+.modal-overlay,
+.modal-overlay * {
   cursor: auto !important;
 }
 body.modal-open .laser-dot {
   display: none !important;
+}
+/* Elementos interactivos dentro del modal conservan la manito */
+.modal-overlay a,
+.modal-overlay button,
+.modal-overlay .modal__close {
+  cursor: pointer !important;
 }
 
 .modal {
