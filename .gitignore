@@ -4,3 +4,10 @@ dist/
 *.log
 
 .claude/
+
+# Entregables multimedia: no se versionan ni se publican.
+# GitHub rechaza archivos > 100 MB y el sitio de Pages tiene un tope de 1 GB;
+# la grabación de la reunión sola pesa 358 MB. Se entregan por canal aparte.
+presentaciones/assets/entregables/ENTREVISTAS/
+presentaciones/assets/entregables/FOTOS-VIDEOS/*.mp4
+presentaciones/assets/entregables/FOTOS-VIDEOS/*.zip

@@ -46,6 +46,15 @@
       transition: transform 0.15s, border-color 0.15s, background 0.15s;
     }
     .card:hover { transform: translateY(-4px); border-color: var(--color-accent); background: var(--color-surface-2); }
+    /* La tarjeta de descargas ocupa su propia fila: no es una presentación. */
+    .card--downloads {
+      grid-column: 1 / -1;
+      background: transparent;
+      border-style: dashed;
+      border-color: rgba(255, 195, 0, 0.35);
+      padding: 1.8rem 2.36rem;
+    }
+    .card--downloads:hover { background: var(--color-surface); }
     .card h2 { font-size: 1.89rem; margin-bottom: 0.54rem; white-space: nowrap; }
     .card span { color: var(--color-text-muted); font-size: 1.22rem; }
     .dot { display: inline-block; width: 13.5px; height: 13.5px; border-radius: 50%; background: var(--color-accent); margin-right: 11px; }
@@ -124,6 +133,10 @@
     <a class="card" href="./presentaciones/recomendaciones/">
       <h2><span class="dot"></span>Recomendaciones</h2>
       <span>Conclusiones y próximos pasos</span>
+    </a>
+    <a class="card card--downloads" href="./presentaciones/descargas/">
+      <h2><span class="dot"></span>Descargas</h2>
+      <span>Informes y entregables de la consultoría</span>
     </a>
   </div>
 
